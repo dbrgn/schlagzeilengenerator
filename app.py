@@ -11,12 +11,13 @@ heroku = Heroku(app)
 
 connection = Connection(app.config['MONGODB_HOST'], app.config['MONGODB_PORT'])
 db = connection[app.config['MONGODB_DB']]
+db.authenticate(app.config['MONGODB_USER'], app.config['MONGODB_PASSWORD'])
 
 
 ### Helper functions ###
 
-def mongo_get_random(collection):
-    collection = db[collection]
+def mongo_get_random(collection_name):
+    collection = db[collection_name]
     count = collection.count()
     offset = randrange(1, count)
     return collection.find().skip(offset).limit(1)[0]
@@ -39,6 +40,7 @@ def generate_headline():
     d_suffix = mongo_get_random('suffix')
     d_action = mongo_get_random('action')
 
+    # Get data from mongo dictionaries
     case = d_suffix['case']
     intro = d_intro['text']
     adjective = d_adjective['text'] + adjective_endings[case]
