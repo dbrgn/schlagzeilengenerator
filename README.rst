@@ -4,6 +4,8 @@ schlagzeilengenerator.ch
 
 Coming soon.
 
+.. image:: https://github.com/gwrtheyrn/schlagzeilengenerator/raw/master/screenshot.png
+
 
 Setup (Local)
 =============
@@ -46,3 +48,10 @@ Setup (Heroku)
     $ heroku apps:create --stack cedar [appname]
     $ heroku addons:add mongolab:starter
     $ git push heroku master
+
+
+Authors
+=======
+
+* Danilo Bargen (Github: `@gwrtheyrn <https://github.com/gwrtheyrn/>`_, Twitter: `@dbrgn <https://twitter.com/dbrgn>`_)
+* Simon Aebersold (Github: `@aebersold <https://github.com/aebersold/>`_, Twitter: `@ouhjasolaessig <https://twitter.com/ouhjasolaessig>`_)
