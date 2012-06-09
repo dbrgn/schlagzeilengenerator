@@ -65,15 +65,15 @@ def generate_headline():
     else:
         action = '%s %s' % (d_action['action_s'], d_action['text'])
 
-    return '%s: %s %s-%s %s!' % (intro, adjective, prefix, suffix, action)
+    return intro, adjective, '%s-%s' % (prefix, suffix), action
 
 
 ### Views ###
 
 @app.route('/', methods=['GET'])
 def headline():
-    headline = generate_headline()
-    return render_template('headline.html', headline=headline)
+    intro, adjective, subject, action = generate_headline()
+    return render_template('headline.html', intro=intro, adjective=adjective, subject=subject, action=action)
 
 
 if __name__ == '__main__':
