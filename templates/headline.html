@@ -1,7 +1,21 @@
 {% extends "base.html" %}
 
+{% block title %}{{ headline }}{% endblock %}
+
 {% block content %}
     <h2>{{ intro }}:</h2><br>
     <h1>{{ adjective }} {{ subject }}</h1><br>
     <h1>{{ action }}</h1>
+
+    <div id="social">
+        <a href="https://twitter.com/schlagzeilengen" class="twitter-follow-button" data-show-count="false" data-lang="de">Follow @schlagzeilengen</a>
+        <a href="https://twitter.com/share" class="twitter-share-button"
+            data-text="{{ headline }}"
+            data-via="schlagzeilengen"
+            data-related="dbrgn:Developer,ouhjasolaessig:Developer"
+            data-lang="de"
+            data-url="{{ app_url }}"
+            data-dnt="true">Tweet this</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
 {% endblock %}

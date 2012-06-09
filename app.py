@@ -66,7 +66,7 @@ def generate_headline():
     else:
         action = '%s %s' % (d_action['action_s'], d_action['text'])
 
-    return intro, adjective, '%s-%s' % (prefix, suffix), action
+    return intro, adjective, prefix, suffix, action
 
 
 ### Views ###
@@ -81,10 +81,23 @@ def redirect_nonwww():
         return redirect(urlunparse(urlparts_list), code=301)
 
 
+@app.context_processor
+def inject_url():
+    """Inject the website-URL into the context."""
+    return dict(app_url=os.environ.get('APP_URL', 'http://www.schlagzeilengenerator.ch/'))
+
+
 @app.route('/', methods=['GET'])
 def headline():
-    intro, adjective, subject, action = generate_headline()
-    return render_template('headline.html', intro=intro, adjective=adjective, subject=subject, action=action)
+    intro, adjective, prefix, suffix, action = generate_headline()
+    context = {
+        'intro': intro,
+        'adjective': adjective,
+        'subject': '%s-%s' % (prefix, suffix),
+        'action': action,
+        'headline': '%s: %s %s-%s %s' % (intro, adjective, prefix, suffix, action),
+    }
+    return render_template('headline.html', **context)
 
 
 if __name__ == '__main__':
