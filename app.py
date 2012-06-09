@@ -2,9 +2,7 @@ import os
 
 from flask import Flask
 from flask_heroku import Heroku
-from mongokit import Connection
-
-import models
+from  pymongo import Connection
 
 
 app = Flask(__name__)
@@ -13,7 +11,6 @@ heroku = Heroku(app)
 app.debug = True
 
 connection = Connection(app.config['MONGODB_HOST'], app.config['MONGODB_PORT'])
-connection.register(models.BasePart.__subclasses__())
 db = connection[app.config['MONGODB_DB']]
 
 
