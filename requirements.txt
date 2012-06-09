@@ -2,3 +2,6 @@ Flask==0.8
 Jinja2==2.6
 Werkzeug==0.8.3
 gunicorn==0.14.3
+mongokit==0.8
+#flask-heroku==0.1.3
+-e git://github.com/kennethreitz/flask-heroku.git@4408f2ff88a5c2d8328891166b35e90ce97d8484#egg=flask_heroku-dev
