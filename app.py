@@ -1,7 +1,18 @@
+# coding=utf-8
+"""
+    Schlagzeilengenerator
+    ~~~~~~~~~~~~~~~~~~~~~
+
+    A small web application to generate tabloid press headlines.
+
+    :copyright: (c) 2012 by Danilo Bargen, Simon Aebersold.
+    :license: MIT, see LICENSE for more details.
+"""
+
 import os
 from random import randrange
 
-from flask import Flask
+from flask import Flask, render_template
 from flask_heroku import Heroku
 from pymongo import Connection
 
@@ -9,9 +20,11 @@ from pymongo import Connection
 app = Flask(__name__)
 heroku = Heroku(app)
 
+
 connection = Connection(app.config['MONGODB_HOST'], app.config['MONGODB_PORT'])
 db = connection[app.config['MONGODB_DB']]
-db.authenticate(app.config['MONGODB_USER'], app.config['MONGODB_PASSWORD'])
+if app.config['MONGODB_USER']:
+    db.authenticate(app.config['MONGODB_USER'], app.config['MONGODB_PASSWORD'])
 
 
 ### Helper functions ###
@@ -21,6 +34,7 @@ def mongo_get_random(collection_name):
     count = collection.count()
     offset = randrange(1, count)
     return collection.find().skip(offset).limit(1)[0]
+
 
 def generate_headline():
     """Generate and return an awesome headline."""
@@ -56,12 +70,11 @@ def generate_headline():
 
 ### Views ###
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def headline():
-    return generate_headline()
+    headline = generate_headline()
+    return render_template('headline.html', headline=headline)
 
-
-### Dev Server ###
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
