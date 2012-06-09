@@ -1,0 +1,5 @@
+########################
+schlagzeilengenerator.ch
+########################
+
+Coming soon.
