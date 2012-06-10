@@ -3,17 +3,22 @@
 {% block title %}{{ headline }}{% endblock %}
 
 {% block content %}
+    <div id="logo">
+      <p>schlagzeilengenerator</p>
+    </div>
+
     <div class="output">
       <h2>{{ intro }}:</h2><br>
       <h1>{{ adjective }} {{ subject }}</h1><br>
       <h1>{{ action }}</h1>
+      <small>Seite refreshen für neue Schlagzeile</small>
     </div>
 
     <div id="social">
-        <a href="https://twitter.com/schlagzeilenbot" class="twitter-follow-button" data-show-count="false" data-lang="de">Follow @schlagzeilenbot</a>
+        <a href="https://twitter.com/schlagzeilengen" class="twitter-follow-button" data-show-count="false" data-lang="de">Follow @schlagzeilengen</a>
         <a href="https://twitter.com/share" class="twitter-share-button"
             data-text="{{ headline }}"
-            data-via="schlagzeilenbot"
+            data-via="schlagzeilengen"
             data-related="dbrgn:Developer,ouhjasolaessig:Developer"
             data-lang="de"
             data-url="{{ app_url }}"

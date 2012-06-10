@@ -4,6 +4,11 @@
         <title>Schlagzeilen-Generator - Boulevardpresse automatisiert!</title>
         <link href="http://fonts.googleapis.com/css?family=Ruda:900,400,700&subset=latin-ext,latin" rel="stylesheet" type="text/css">
         <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css">
+        
+        <!--[if lte IE 7]>
+        <link rel="stylesheet" href="{{ url_for('static', filename='ie.css') }}" type="text/css">
+        <![endif]-->
+        
         <script type="text/javascript">
           var _gaq = _gaq || [];
           _gaq.push(['_setAccount', 'UA-1033934-11']);
