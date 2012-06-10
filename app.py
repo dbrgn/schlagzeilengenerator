@@ -75,7 +75,7 @@ def generate_headline():
     else:
         action = '%s %s' % (d_action['action_s'], d_action['text'])
 
-    return intro, adjective, prefix, suffix, action
+    return intro, adjective, prefix, suffix, action.strip()
 
 
 ### Views ###
