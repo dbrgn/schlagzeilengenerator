@@ -13,7 +13,8 @@ import os
 from random import randrange
 from urlparse import urlparse, urlunparse
 
-from flask import Flask, request, redirect, render_template
+from flask import Flask, request, redirect
+from flask import render_template, jsonify
 from flask_heroku import Heroku
 from pymongo import Connection
 
@@ -29,6 +30,14 @@ if app.config['MONGODB_USER']:
 
 
 ### Helper functions ###
+
+def request_wants_json():
+    # Taken from http://flask.pocoo.org/snippets/45/
+    best = request.accept_mimetypes \
+        .best_match(['application/json', 'text/html'])
+    return best == 'application/json' and \
+        request.accept_mimetypes[best] > request.accept_mimetypes['text/html']
+
 
 def mongo_get_random(collection_name):
     collection = db[collection_name]
@@ -97,6 +106,8 @@ def headline():
         'action': action,
         'headline': '%s: %s %s-%s %s' % (intro, adjective, prefix, suffix, action),
     }
+    if request_wants_json():
+        return jsonify(context)
     return render_template('headline.html', **context)
 
 
