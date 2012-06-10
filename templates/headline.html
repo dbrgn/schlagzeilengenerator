@@ -3,9 +3,11 @@
 {% block title %}{{ headline }}{% endblock %}
 
 {% block content %}
-    <h2>{{ intro }}:</h2><br>
-    <h1>{{ adjective }} {{ subject }}</h1><br>
-    <h1>{{ action }}</h1>
+    <div class="output">
+      <h2>{{ intro }}:</h2><br>
+      <h1>{{ adjective }} {{ subject }}</h1><br>
+      <h1>{{ action }}</h1>
+    </div>
 
     <div id="social">
         <a href="https://twitter.com/schlagzeilengen" class="twitter-follow-button" data-show-count="false" data-lang="de">Follow @schlagzeilengen</a>
@@ -17,5 +19,11 @@
             data-url="{{ app_url }}"
             data-dnt="true">Tweet this</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+    
+    <div id="copy">
+        <p>Authors:</p>
+        <p>Danilo Bargen (<a href="https://twitter.com/dbrgn">@dbrgn</a>)</p>
+        <p>Simon Aebersold (<a href="https://twitter.com/ouhjasolaessig">@ouhjasolaessig</a>)</p>
     </div>
 {% endblock %}
