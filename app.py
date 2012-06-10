@@ -100,6 +100,12 @@ def headline():
     return render_template('headline.html', **context)
 
 
+@app.route('/about', methods=['GET'])
+def about():
+    context = {}
+    return render_template('about.html', **context)
+
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8000))
     debug = os.environ.get('DEBUG') in ['true', 'True', 'TRUE', 't', 'T', '1']
