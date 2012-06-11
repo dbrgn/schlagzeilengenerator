@@ -3,6 +3,7 @@
 {'text': 'Ausländer'}
 {'text': 'Balkan'}
 {'text': 'Banken'}
+{'text': 'Bunga-Bunga'}
 {'text': 'Casino'}
 {'text': 'Chaos'}
 {'text': 'Gewinnspiel'}
@@ -15,7 +16,9 @@
 {'text': 'IV'}
 {'text': 'Käse'}
 {'text': 'Killer'}
+{'text': 'Linksautonomer'}
 {'text': 'Mafia'}
+{'text': 'Mafiosi'}
 {'text': 'Militär'}
 {'text': 'Ostblock'}
 {'text': 'Pädo'}
@@ -25,6 +28,7 @@
 {'text': 'Porno'}
 {'text': 'Psycho'}
 {'text': 'Raser'}
+{'text': 'Rechtsextremer'}
 {'text': 'Roma'}
 {'text': 'Rotlicht'}
 {'text': 'Sex'}
@@ -34,5 +38,6 @@
 {'text': 'Suizid'}
 {'text': 'Terror'}
 {'text': 'UBS'}
+{'text': 'Vize'}
 {'text': 'Volks'}
 {'text': 'Wunder'}

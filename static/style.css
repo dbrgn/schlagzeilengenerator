@@ -39,7 +39,7 @@ a {
 
 .output {
     width: 900px;
-    padding-top:200px;
+    padding:200px 30px 0px 30px;
     margin:0 auto;
     text-align: left;
 }
@@ -52,7 +52,7 @@ h1 {
     display: inline-block;
     background-color: #D6081C;
     padding: 3px 8px;
-    margin: 5px 30px;
+    margin: 5px 0px;
 }
 h2 {
     font-family: 'Ruda', sans-serif;
@@ -62,13 +62,13 @@ h2 {
     background-color: #fff;
     display: inline-block;
     padding: 3px 8px;
-    margin: 5px 30px;
+    margin: 5px 0px;
 }
 small {
     font: .8em/1.5 Helvetica, Arial, Sans-Serif;
     text-shadow:0px 0px 2px #610a00;
     display:block;
-    margin: 5px 30px;
+    margin: 5px 0px;
     color:#d4091c;
 }
 #logo {
