@@ -47,7 +47,7 @@ def mongo_get_random(collection_name):
         print >> sys.stderr, 'No data in the database.'
         sys.exit(2)
     elif count == 1:
-        offset = 1
+        offset = 0
     else:
         offset = randrange(1, count)
     return collection.find().skip(offset).limit(1)[0]
