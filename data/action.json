@@ -28,13 +28,13 @@
 {'action_s': 'gewinnt', 'action_p': 'gewinnen', 'text': ''}
 {'action_s': 'gewinnt', 'action_p': 'gewinnen', 'text': 'im Dschungelcamp'}
 {'action_s': 'hört', 'action_p': 'hören', 'text': 'gern DJ Bobo'}
+{'action_s': 'ist', 'action_p': 'sind', 'text': 'Alkoholiker'}
 {'action_s': 'ist', 'action_p': 'sind', 'text': 'zu dick'}
 {'action_s': 'klaut', 'action_p': 'klauen', 'text': 'Guezli in der Migros'}
-{'action_s': 'lässts', 'action_p': 'lassen es', 'text': 'Krachen'}
+{'action_s': 'lässts', 'action_p': 'lassen es', 'text': 'krachen'}
 {'action_s': 'läuft', 'action_p': 'laufen', 'text': 'Amok'}
 {'action_s': 'lobt', 'action_p': 'loben', 'text': 'Justin Bieber'}
 {'action_s': 'packt', 'action_p': 'packen', 'text': 'aus'}
-{'action_s': 'singt', 'action_p': 'singen', 'text': 'für Bieber'}
 {'action_s': 'steigt', 'action_p': 'steigen', 'text': 'in den Container'}
 {'action_s': 'strippt', 'action_p': 'strippen', 'text': 'jetzt Vollzeit'}
 {'action_s': 'stürmt', 'action_p': 'stürmen', 'text': 'Primarschule'}
