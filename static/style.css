@@ -19,6 +19,8 @@ a {
     width:100%;
     background-color:#8b0b0a;
     display:block;
+    min-width:900px;
+    min-height:600px;
    
     background-image: linear-gradient(bottom, rgb(97,10,0) 33%, rgb(212,9,29) 84%);
     background-image: -o-linear-gradient(bottom, rgb(97,10,0) 33%, rgb(212,9,29) 84%);
@@ -37,10 +39,8 @@ a {
 
 .output {
     width: 900px;
-    margin: -180px 0 0 -450px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    padding-top:200px;
+    margin:0 auto;
     text-align: left;
 }
 
