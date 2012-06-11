@@ -10,6 +10,7 @@
 """
 
 import os
+import sys
 from random import randrange
 from urlparse import urlparse, urlunparse
 
@@ -42,7 +43,13 @@ def request_wants_json():
 def mongo_get_random(collection_name):
     collection = db[collection_name]
     count = collection.count()
-    offset = randrange(1, count)
+    if count == 0:
+        print >> sys.stderr, 'No data in the database.'
+        sys.exit(2)
+    elif count == 1:
+        offset = 1
+    else:
+        offset = randrange(1, count)
     return collection.find().skip(offset).limit(1)[0]
 
 
