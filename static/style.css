@@ -86,7 +86,7 @@ h2 {
     filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
-#reload a: hover {
+#reload a:hover {
     opacity: 0.8;
     filter: alpha(opacity=80); /* For IE8 and earlier */
 }
