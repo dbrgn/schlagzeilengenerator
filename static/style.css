@@ -22,18 +22,18 @@ a {
     min-width:900px;
     min-height:600px;
    
-    background-image: linear-gradient(bottom, rgb(97,10,0) 33%, rgb(212,9,29) 84%);
-    background-image: -o-linear-gradient(bottom, rgb(97,10,0) 33%, rgb(212,9,29) 84%);
-    background-image: -moz-linear-gradient(bottom, rgb(97,10,0) 33%, rgb(212,9,29) 84%);
-    background-image: -webkit-linear-gradient(bottom, rgb(97,10,0) 33%, rgb(212,9,29) 84%);
-    background-image: -ms-linear-gradient(bottom, rgb(97,10,0) 33%, rgb(212,9,29) 84%);
+    background-image: linear-gradient(bottom, rgb(97,10,0) 33%, rgb(159,2,0) 84%);
+    background-image: -o-linear-gradient(bottom, rgb(97,10,0) 33%, rgb(159,2,0) 84%);
+    background-image: -moz-linear-gradient(bottom, rgb(97,10,0) 33%, rgb(159,2,0) 84%);
+    background-image: -webkit-linear-gradient(bottom, rgb(97,10,0) 33%, rgb(159,2,0) 84%);
+    background-image: -ms-linear-gradient(bottom, rgb(97,10,0) 33%, rgb(159,2,0) 84%);
 
     background-image: -webkit-gradient(
       linear,
       left bottom,
       left top,
       color-stop(0.33, rgb(97,10,0)),
-      color-stop(0.84, rgb(212,9,29))
+      color-stop(0.84, rgb(159,2,0))
     ); 
 }
 
@@ -66,14 +66,14 @@ h2 {
 }
 small {
     font: .8em/1.5 Helvetica, Arial, Sans-Serif;
-    text-shadow:0px 0px 2px #610a00;
     display:block;
     margin: 5px 0px;
-    color:#d4091c;
+    color:#D6081C;
+    text-shadow:0px 0px 2px #560A00;
 }
 #logo {
     position: absolute;
-    bottom: 50px;
+    bottom: 65px;
     right:40px;
     font-family: 'Ruda', sans-serif;
     font-weight: 400;
@@ -90,4 +90,5 @@ small {
     bottom: 30px;
     right:40px;   
     text-shadow:1px 0px 1px #000;
+    text-align: right;
 }
