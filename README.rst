@@ -2,8 +2,6 @@
 schlagzeilengenerator.ch
 ########################
 
-Coming soon.
-
 .. image:: https://github.com/gwrtheyrn/schlagzeilengenerator/raw/master/screenshot.png
 
 The headlines are tweeted twice a day by `@schlagzeilenbot <http://twitter.com/schlagzeilenbot>`_.
