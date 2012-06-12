@@ -19,3 +19,11 @@ def update_data():
                 'collection': ''.join(datafile.split('.')[:-1]),
             })
             local('mongoimport -h %(host)s:%(port)i -d %(app)s -c %(collection)s -u %(user)s -p %(pass)s --drop --file data/%(file)s' % data)
+
+
+def stage():
+    local('git push staging master')
+
+
+def deploy():
+    local('git push production master')
