@@ -3,6 +3,10 @@
 {% block title %}{{ headline }}{% endblock %}
 
 {% block content %}
+    <div id="reload">
+      <a href="window.location.reload()" onClick="window.location.reload()"></a>
+    </div>
+
     <div class="output">
       <h2>{{ intro }}:</h2><br>
       <h1>{{ adjective }} {{ subject }}</h1><br>
