@@ -70,8 +70,8 @@ h2 {
 
 #reload {
     position: fixed;
-    bottom: 60px;
     right: 40px;
+    bottom: 90px;
 }
 
 #reload a {
@@ -93,8 +93,8 @@ h2 {
 
 #logo {
     position: fixed;
-    bottom: 68px;
-    right: 100px;
+    bottom: 50px;
+    right: 40px;
     font-family: 'Ruda', sans-serif;
     font-weight: 400;
     font-size: 20px;

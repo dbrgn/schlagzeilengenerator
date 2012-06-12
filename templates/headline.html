@@ -3,14 +3,11 @@
 {% block title %}{{ headline }}{% endblock %}
 
 {% block content %}
-    <div id="reload">
-      <a href="/"></a>
-    </div>
-
+    
     <div class="output">
-      <h2>{{ intro }}:</h2><br>
-      <h1>{{ adjective }} {{ subject }}</h1><br>
-      <h1>{{ action }}</h1>
+        <h2>{{ intro }}:</h2><br>
+        <h1>{{ adjective }} {{ subject }}</h1><br>
+        <h1>{{ action }}</h1>
     </div>
 
     <div id="social">
@@ -25,9 +22,12 @@
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
 
+    <div id="reload"><a href="/"></a></div>
+
     <div id="logo">
       <p>schlagzeilengenerator</p>
     </div>
+
     <div id="copy">
         <p>Project by <a href="https://twitter.com/dbrgn">@dbrgn</a> and <a href="https://twitter.com/ouhjasolaessig">@ouhjasolaessig</a>. Source on <a href="https://github.com/gwrtheyrn/schlagzeilengenerator/">Github</a>.</p>
     </div>
