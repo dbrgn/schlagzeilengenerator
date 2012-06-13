@@ -7,6 +7,17 @@ schlagzeilengenerator.ch
 The headlines are tweeted twice a day by `@schlagzeilenbot <http://twitter.com/schlagzeilenbot>`_.
 
 
+JSON API
+========
+
+To get JSON data from the website, just set the `Accept` header of a GET request
+to `application/json`.
+
+::
+
+    $ curl -H "accept: application/json" http://www.schlagzeilengenerator.ch/
+
+
 Setup (Local)
 =============
 
