@@ -6,7 +6,7 @@
     A small web application to generate tabloid press headlines.
 
     :copyright: (c) 2012 by Danilo Bargen, Simon Aebersold.
-    :license: MIT, see LICENSE for more details.
+    :license: BSD 3-clause, see LICENSE for more details.
 """
 
 import os
