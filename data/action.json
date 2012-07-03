@@ -14,6 +14,7 @@
 {'action_s': '', 'action_p': '', 'text': 'in Untersuchungshaft'}
 {'action_s': '', 'action_p': '', 'text': 'knapp am Tod vorbei'}
 {'action_s': '', 'action_p': '', 'text': 'konkurs'}
+{'action_s': '', 'action_p': '', 'text': 'mit 250 auf Autobahn geblitzt'}
 {'action_s': '', 'action_p': '', 'text': 'nackt abgekratzt'}
 {'action_s': '', 'action_p': '', 'text': 'schwer verunfallt'}
 {'action_s': '', 'action_p': '', 'text': 'tot'}
@@ -27,6 +28,7 @@
 {'action_s': 'geht', 'action_p': 'gehen', 'text': 'an beste Uni der Welt'}
 {'action_s': 'gewinnt', 'action_p': 'gewinnen', 'text': ''}
 {'action_s': 'gewinnt', 'action_p': 'gewinnen', 'text': 'im Dschungelcamp'}
+{'action_s': 'gibt', 'action_p': 'geben', 'text': 'Benefizkonzert'}
 {'action_s': 'hört', 'action_p': 'hören', 'text': 'gern DJ Bobo'}
 {'action_s': 'ist', 'action_p': 'sind', 'text': 'Alkoholiker'}
 {'action_s': 'ist', 'action_p': 'sind', 'text': 'zu dick'}
@@ -35,6 +37,8 @@
 {'action_s': 'läuft', 'action_p': 'laufen', 'text': 'Amok'}
 {'action_s': 'lobt', 'action_p': 'loben', 'text': 'Justin Bieber'}
 {'action_s': 'packt', 'action_p': 'packen', 'text': 'aus'}
+{'action_s': 'schlitzt', 'action_p': 'schlitzen', 'text': 'Schweizer auf'}
+{'action_s': 'spielt', 'action_p': 'spielen', 'text': 'Killerspiele'}
 {'action_s': 'steigt', 'action_p': 'steigen', 'text': 'in den Container'}
 {'action_s': 'strippt', 'action_p': 'strippen', 'text': 'jetzt Vollzeit'}
 {'action_s': 'stürmt', 'action_p': 'stürmen', 'text': 'Primarschule'}
