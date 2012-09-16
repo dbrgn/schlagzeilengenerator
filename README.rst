@@ -4,7 +4,7 @@ schlagzeilengenerator.ch
 
 .. image:: https://github.com/gwrtheyrn/schlagzeilengenerator/raw/master/screenshot.png
 
-The headlines are tweeted twice a day by `@schlagzeilenbot <http://twitter.com/schlagzeilenbot>`_.
+The headlines are tweeted daily by `@schlagzeilenbot <http://twitter.com/schlagzeilenbot>`_.
 
 
 JSON API
@@ -59,6 +59,12 @@ Setup (Heroku)
     $ heroku apps:create --stack cedar [appname]
     $ heroku addons:add mongolab:starter
     $ git push heroku master
+
+
+License
+=======
+
+3-clause BSD, see `LICENSE` file for more information.
 
 
 Authors
