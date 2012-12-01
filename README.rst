@@ -2,7 +2,7 @@
 schlagzeilengenerator.ch
 ########################
 
-.. image:: https://github.com/gwrtheyrn/schlagzeilengenerator/raw/master/screenshot.png
+.. image:: https://github.com/dbrgn/schlagzeilengenerator/raw/master/screenshot.png
 
 The headlines are tweeted daily by `@schlagzeilenbot <http://twitter.com/schlagzeilenbot>`_.
 
@@ -70,5 +70,5 @@ License
 Authors
 =======
 
-* Danilo Bargen (Github: `@gwrtheyrn <https://github.com/gwrtheyrn/>`_, Twitter: `@dbrgn <https://twitter.com/dbrgn>`_)
+* Danilo Bargen (Github: `@dbrgn <https://github.com/dbrgn/>`_, Twitter: `@dbrgn <https://twitter.com/dbrgn>`_)
 * Simon Aebersold (Github: `@aebersold <https://github.com/aebersold/>`_, Twitter: `@ouhjasolaessig <https://twitter.com/ouhjasolaessig>`_)
