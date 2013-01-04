@@ -58,6 +58,7 @@ Setup (Heroku)
 
     $ heroku apps:create --stack cedar [appname]
     $ heroku addons:add mongolab:starter
+    $ heroku addons:docs newrelic:standard
     $ git push heroku master
 
 
