@@ -1,4 +1,5 @@
 {'text': 'AHV'}
+{'text': 'Assi'}
 {'text': 'Atom'}
 {'text': 'Ausländer'}
 {'text': 'Balkan'}
@@ -6,6 +7,8 @@
 {'text': 'Bunga-Bunga'}
 {'text': 'Casino'}
 {'text': 'Chaos'}
+{'text': 'Drama'}
+{'text': 'Füdli'}
 {'text': 'Gewinnspiel'}
 {'text': 'Glatzen'}
 {'text': 'Griechen'}
@@ -19,6 +22,7 @@
 {'text': 'Killer'}
 {'text': 'Mafia'}
 {'text': 'Militär'}
+{'text': 'Nazi'}
 {'text': 'Ostblock'}
 {'text': 'Pädo'}
 {'text': 'Peitschen'}
@@ -26,6 +30,7 @@
 {'text': 'Playboy'}
 {'text': 'Porno'}
 {'text': 'Psycho'}
+{'text': 'Quassel'}
 {'text': 'Raser'}
 {'text': 'Roma'}
 {'text': 'Rotlicht'}
@@ -36,7 +41,9 @@
 {'text': 'Star'}
 {'text': 'Suizid'}
 {'text': 'Terror'}
+{'text': 'Tunten'}
 {'text': 'UBS'}
 {'text': 'Vize'}
 {'text': 'Volks'}
 {'text': 'Wunder'}
+{'text': 'Zombie'}

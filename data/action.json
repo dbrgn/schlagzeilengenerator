@@ -55,6 +55,7 @@
 {'action_s': 'tritt', 'action_p': 'treten', 'text': 'zurück'}
 {'action_s': 'überfällt', 'action_p': 'überfallen', 'text': 'Geschäftsmänner'}
 {'action_s': 'will', 'action_p': 'wollen', 'text': 'EU Beitritt'}
+{'action_s': 'will', 'action_p': 'wollen', 'text': 'Gesundheitsreform'}
 {'action_s': 'will', 'action_p': 'wollen', 'text': 'Staat enteignen'}
 {'action_s': 'wird Vater', 'action_p': 'werden Eltern', 'text': ''}
 {'action_s': 'wurde', 'action_p': 'wurden', 'text': 'gemobbt'}
