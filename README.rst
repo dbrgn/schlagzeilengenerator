@@ -72,4 +72,4 @@ Authors
 =======
 
 * Danilo Bargen (Github: `@dbrgn <https://github.com/dbrgn/>`_, Twitter: `@dbrgn <https://twitter.com/dbrgn>`_)
-* Simon Aebersold (Github: `@aebersold <https://github.com/aebersold/>`_, Twitter: `@ouhjasolaessig <https://twitter.com/ouhjasolaessig>`_)
+* Simon Aebersold (Github: `@aebersold <https://github.com/aebersold/>`_, Twitter: `@saebersold <https://twitter.com/saebersold>`_)
