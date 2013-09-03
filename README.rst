@@ -56,9 +56,10 @@ Setup (Heroku)
 
 ::
 
-    $ heroku apps:create --stack cedar [appname]
-    $ heroku addons:add mongolab:starter
-    $ heroku addons:docs newrelic:standard
+    $ heroku apps:create --region eu [appname]
+    $ heroku addons:add mongolab:sandbox
+    $ heroku addons:add newrelic:standard
+    $ heroku addons:open newrelic:standard
     $ git push heroku master
 
 

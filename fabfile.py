@@ -1,11 +1,10 @@
 import os
 from fabric.api import local
-from localconf import mongo_host, mongo_port, mongo_app, mongo_user, mongo_pass
+from localconf import mongo_host, mongo_app, mongo_user, mongo_pass
 
 def update_data():
     data = {
         'host': mongo_host,
-        'port': mongo_port,
         'app': mongo_app,
         'user': mongo_user,
         'pass': mongo_pass
@@ -18,7 +17,7 @@ def update_data():
                 'file': datafile,
                 'collection': ''.join(datafile.split('.')[:-1]),
             })
-            local('mongoimport -h %(host)s:%(port)i -d %(app)s -c %(collection)s -u %(user)s -p %(pass)s --drop --file data/%(file)s' % data)
+            local('mongoimport -h %(host)s -d %(app)s -c %(collection)s -u %(user)s -p %(pass)s --drop --file data/%(file)s' % data)
 
 def pull():
     local('git pull origin master')
