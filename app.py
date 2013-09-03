@@ -13,6 +13,7 @@ import os
 import sys
 from random import randrange
 from urlparse import urlparse, urlunparse
+from base64 import b64decode
 
 from flask import Flask, request, redirect
 from flask import render_template, jsonify
@@ -53,8 +54,31 @@ def mongo_get_random(collection_name):
     return collection.find().skip(offset).limit(1)[0]
 
 
-def generate_headline():
-    """Generate and return an awesome headline."""
+def mongo_get_by_id(collection_name, item_id):
+    collection = db[collection_name]
+    cursor = collection.find({'id': item_id}).limit(1)
+    if cursor.count() == 0:
+        errmsg = '%s item with ID %d not found.' % (collection_name, item_id)
+        print >> sys.stderr, errmsg
+        raise ValueError(errmsg)
+    return cursor[0]
+
+
+### Headline generation ###
+
+def generate_headline(ids=None):
+    """Generate and return an awesome headline.
+
+    Args:
+        ids:
+            Iterable of five IDs (intro, adjective, prefix, suffix, action).
+            Optional. If this is ``None``, random values are fetched from the
+            database.
+
+    Returns:
+        Tuple of parts (intro, adjective, prefix, suffix, action)
+
+    """
 
     # Correct endings
     adjective_endings = {
@@ -65,11 +89,18 @@ def generate_headline():
     }
 
     # Get random database entries
-    d_intro = mongo_get_random('intro')
-    d_adjective = mongo_get_random('adjective')
-    d_prefix = mongo_get_random('prefix')
-    d_suffix = mongo_get_random('suffix')
-    d_action = mongo_get_random('action')
+    if ids is not None:
+        d_intro = mongo_get_by_id('intro', ids[0])
+        d_adjective = mongo_get_by_id('adjective', ids[1])
+        d_prefix = mongo_get_by_id('prefix', ids[2])
+        d_suffix = mongo_get_by_id('suffix', ids[3])
+        d_action = mongo_get_by_id('action', ids[4])
+    else:
+        d_intro = mongo_get_random('intro')
+        d_adjective = mongo_get_random('adjective')
+        d_prefix = mongo_get_random('prefix')
+        d_suffix = mongo_get_random('suffix')
+        d_action = mongo_get_random('action')
 
     # Get data from mongo dictionaries
     case = d_suffix['case']
@@ -104,18 +135,38 @@ def inject_url():
 
 
 @app.route('/', methods=['GET'])
-def headline():
-    intro, adjective, prefix, suffix, action = generate_headline()
-    context = {
-        'intro': intro,
-        'adjective': adjective,
-        'subject': '%s-%s' % (prefix, suffix),
-        'action': action,
-        'headline': '%s: %s %s-%s %s' % (intro, adjective, prefix, suffix, action),
-    }
+@app.route('/<permalink>', methods=['GET'])
+def headline(permalink=None):
+    # Prepare variables
+    error = ''
+    status_code = 200
+
+    # Fetch parts
+    if permalink is None:
+        intro, adjective, prefix, suffix, action = generate_headline()
+    else:
+        try:
+            ids = map(int, b64decode(permalink).split(','))
+            assert len(ids) == 5, 'There must be 5 IDs in permalink'
+            intro, adjective, prefix, suffix, action = generate_headline(ids)
+        except (ValueError, AssertionError, TypeError):
+            error = 'Invalid permalink.'
+
+    # Prepare and return output
+    if error == '':
+        context = {
+            'intro': intro,
+            'adjective': adjective,
+            'subject': '%s-%s' % (prefix, suffix),
+            'action': action,
+            'headline': '%s: %s %s-%s %s' % (intro, adjective, prefix, suffix, action),
+        }
+    else:
+        context = {'error': 'Invalid permalink.'}
+        status_code = 400
     if request_wants_json():
-        return jsonify(context)
-    return render_template('headline.html', **context)
+        return jsonify(context), status_code
+    return render_template('headline.html', **context), status_code
 
 
 if __name__ == '__main__':

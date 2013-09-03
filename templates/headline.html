@@ -5,13 +5,20 @@
 {% block content %}
     
     <div class="output">
-        <h2>{{ intro }}:</h2><br>
-        <h1>{{ adjective }} {{ subject }}</h1><br>
-        <h1>{{ action }}</h1>
+        {% if error %}
+            <h1>Fehler:</h1><br>
+            <h2>{{ error }}</h2><br>
+            <h3>Klicken Sie <a href="/">hier</a> um eine zufällige Schlagzeile zu generieren.</h3>
+        {% else %}
+            <h2>{{ intro }}:</h2><br>
+            <h1>{{ adjective }} {{ subject }}</h1><br>
+            <h1>{{ action }}</h1>
+        {% endif %}
     </div>
 
     <div id="social">
         <a href="https://twitter.com/schlagzeilenbot" class="twitter-follow-button" data-show-count="false" data-lang="de">Follow @schlagzeilenbot</a>
+        {% if not error %}
         <a href="https://twitter.com/share" class="twitter-share-button"
             data-text="{{ headline }}"
             data-via="schlagzeilenbot"
@@ -19,6 +26,7 @@
             data-lang="de"
             data-url="{{ app_url }}"
             data-dnt="true">Tweet this</a>
+        {% endif %}
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
 
