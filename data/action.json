@@ -1,63 +1,63 @@
-{'action_s': '', 'action_p': '', 'text': 'am Boden'}
-{'action_s': '', 'action_p': '', 'text': 'auf dem Playboy Cover'}
-{'action_s': '', 'action_p': '', 'text': 'auf Diebestour'}
-{'action_s': '', 'action_p': '', 'text': 'aufgedeckt'}
-{'action_s': '', 'action_p': '', 'text': 'ausgeschafft'}
-{'action_s': '', 'action_p': '', 'text': 'besoffen'}
-{'action_s': '', 'action_p': '', 'text': 'durch Felssturz getötet'}
-{'action_s': '', 'action_p': '', 'text': 'entlarvt'}
-{'action_s': '', 'action_p': '', 'text': 'erneut vor Gericht'}
-{'action_s': '', 'action_p': '', 'text': 'gehängt'}
-{'action_s': '', 'action_p': '', 'text': 'gescheitert'}
-{'action_s': '', 'action_p': '', 'text': 'im Koma'}
-{'action_s': '', 'action_p': '', 'text': 'im Liebestaumel'}
-{'action_s': '', 'action_p': '', 'text': 'in Psychiatrie eingeliefert'}
-{'action_s': '', 'action_p': '', 'text': 'in Untersuchungshaft'}
-{'action_s': '', 'action_p': '', 'text': 'knapp am Tod vorbei'}
-{'action_s': '', 'action_p': '', 'text': 'konkurs'}
-{'action_s': '', 'action_p': '', 'text': 'mit 250 auf Autobahn geblitzt'}
-{'action_s': '', 'action_p': '', 'text': 'nackt abgekratzt'}
-{'action_s': '', 'action_p': '', 'text': 'oben ohne'}
-{'action_s': '', 'action_p': '', 'text': 'schwer verunfallt'}
-{'action_s': '', 'action_p': '', 'text': 'tot'}
-{'action_s': '', 'action_p': '', 'text': 'vergewaltigt'}
-{'action_s': '', 'action_p': '', 'text': 'voll daneben'}
-{'action_s': '', 'action_p': '', 'text': 'von Motorboot zerfetzt'}
-{'action_s': 'ärgert', 'action_p': 'ärgern', 'text': 'sich über Nacktvideo'}
-{'action_s': 'belästigt', 'action_p': 'belästigen', 'text': 'Mädchen'}
-{'action_s': 'bescheisst', 'action_p': 'bescheissen', 'text': 'IV'}
-{'action_s': 'dreht', 'action_p': 'drehen', 'text': 'durch'}
-{'action_s': 'erschiesst', 'action_p': 'erschiessen', 'text': 'Präsidenten'}
-{'action_s': 'fordert', 'action_p': 'fordern', 'text': 'höhere Steuern'}
-{'action_s': 'geht', 'action_p': 'gehen', 'text': 'an beste Uni der Welt'}
-{'action_s': 'gewinnt', 'action_p': 'gewinnen', 'text': ''}
-{'action_s': 'gewinnt', 'action_p': 'gewinnen', 'text': 'im Dschungelcamp'}
-{'action_s': 'gibt', 'action_p': 'geben', 'text': 'Benefizkonzert'}
-{'action_s': 'glaubt', 'action_p': 'glauben', 'text': 'an den Weltuntergang'}
-{'action_s': 'hasst', 'action_p': 'hassen', 'text': 'Schweiz'}
-{'action_s': 'hört', 'action_p': 'hören', 'text': 'gern DJ Bobo'}
-{'action_s': 'ist', 'action_p': 'sind', 'text': 'Alkoholiker'}
-{'action_s': 'ist', 'action_p': 'sind', 'text': 'Tierquäler'}
-{'action_s': 'ist', 'action_p': 'sind', 'text': 'zu dick'}
-{'action_s': 'klaut', 'action_p': 'klauen', 'text': 'Guezli in der Migros'}
-{'action_s': 'lässts', 'action_p': 'lassen es', 'text': 'krachen'}
-{'action_s': 'läuft', 'action_p': 'laufen', 'text': 'Amok'}
-{'action_s': 'lobt', 'action_p': 'loben', 'text': 'Justin Bieber'}
-{'action_s': 'packt', 'action_p': 'packen', 'text': 'aus'}
-{'action_s': 'schlitzt', 'action_p': 'schlitzen', 'text': 'Schweizer auf'}
-{'action_s': 'spielt', 'action_p': 'spielen', 'text': 'Killerspiele'}
-{'action_s': 'steigt', 'action_p': 'steigen', 'text': 'in den Container'}
-{'action_s': 'stirbt', 'action_p': 'sterben', 'text': 'im Tiefschnee'}
-{'action_s': 'strippt', 'action_p': 'strippen', 'text': 'jetzt Vollzeit'}
-{'action_s': 'stürmt', 'action_p': 'stürmen', 'text': 'Primarschule'}
-{'action_s': 'trinkt', 'action_p': 'trinken', 'text': 'Bier'}
-{'action_s': 'tritt', 'action_p': 'treten', 'text': 'am Eurovision Contest auf'}
-{'action_s': 'tritt', 'action_p': 'treten', 'text': 'zurück'}
-{'action_s': 'überfällt', 'action_p': 'überfallen', 'text': 'Geschäftsmänner'}
-{'action_s': 'will', 'action_p': 'wollen', 'text': 'EU Beitritt'}
-{'action_s': 'will', 'action_p': 'wollen', 'text': 'Gesundheitsreform'}
-{'action_s': 'will', 'action_p': 'wollen', 'text': 'Staat enteignen'}
-{'action_s': 'wird Vater', 'action_p': 'werden Eltern', 'text': ''}
-{'action_s': 'wurde', 'action_p': 'wurden', 'text': 'gemobbt'}
-{'action_s': 'zieht', 'action_p': 'ziehen', 'text': 'vor Gericht'}
-{'action_s': 'zockt', 'action_p': 'zocken', 'text': 'ab'}
+{'id': 1, 'action_s': '', 'action_p': '', 'text': 'am Boden'}
+{'id': 2, 'action_s': '', 'action_p': '', 'text': 'auf dem Playboy Cover'}
+{'id': 3, 'action_s': '', 'action_p': '', 'text': 'auf Diebestour'}
+{'id': 4, 'action_s': '', 'action_p': '', 'text': 'aufgedeckt'}
+{'id': 5, 'action_s': '', 'action_p': '', 'text': 'ausgeschafft'}
+{'id': 6, 'action_s': '', 'action_p': '', 'text': 'besoffen'}
+{'id': 7, 'action_s': '', 'action_p': '', 'text': 'durch Felssturz getötet'}
+{'id': 8, 'action_s': '', 'action_p': '', 'text': 'entlarvt'}
+{'id': 9, 'action_s': '', 'action_p': '', 'text': 'erneut vor Gericht'}
+{'id': 10, 'action_s': '', 'action_p': '', 'text': 'gehängt'}
+{'id': 11, 'action_s': '', 'action_p': '', 'text': 'gescheitert'}
+{'id': 12, 'action_s': '', 'action_p': '', 'text': 'im Koma'}
+{'id': 13, 'action_s': '', 'action_p': '', 'text': 'im Liebestaumel'}
+{'id': 14, 'action_s': '', 'action_p': '', 'text': 'in Psychiatrie eingeliefert'}
+{'id': 15, 'action_s': '', 'action_p': '', 'text': 'in Untersuchungshaft'}
+{'id': 16, 'action_s': '', 'action_p': '', 'text': 'knapp am Tod vorbei'}
+{'id': 17, 'action_s': '', 'action_p': '', 'text': 'konkurs'}
+{'id': 18, 'action_s': '', 'action_p': '', 'text': 'mit 250 auf Autobahn geblitzt'}
+{'id': 19, 'action_s': '', 'action_p': '', 'text': 'nackt abgekratzt'}
+{'id': 20, 'action_s': '', 'action_p': '', 'text': 'oben ohne'}
+{'id': 21, 'action_s': '', 'action_p': '', 'text': 'schwer verunfallt'}
+{'id': 22, 'action_s': '', 'action_p': '', 'text': 'tot'}
+{'id': 23, 'action_s': '', 'action_p': '', 'text': 'vergewaltigt'}
+{'id': 24, 'action_s': '', 'action_p': '', 'text': 'voll daneben'}
+{'id': 25, 'action_s': '', 'action_p': '', 'text': 'von Motorboot zerfetzt'}
+{'id': 26, 'action_s': 'ärgert', 'action_p': 'ärgern', 'text': 'sich über Nacktvideo'}
+{'id': 27, 'action_s': 'belästigt', 'action_p': 'belästigen', 'text': 'Mädchen'}
+{'id': 28, 'action_s': 'bescheisst', 'action_p': 'bescheissen', 'text': 'IV'}
+{'id': 29, 'action_s': 'dreht', 'action_p': 'drehen', 'text': 'durch'}
+{'id': 30, 'action_s': 'erschiesst', 'action_p': 'erschiessen', 'text': 'Präsidenten'}
+{'id': 31, 'action_s': 'fordert', 'action_p': 'fordern', 'text': 'höhere Steuern'}
+{'id': 32, 'action_s': 'geht', 'action_p': 'gehen', 'text': 'an beste Uni der Welt'}
+{'id': 33, 'action_s': 'gewinnt', 'action_p': 'gewinnen', 'text': ''}
+{'id': 34, 'action_s': 'gewinnt', 'action_p': 'gewinnen', 'text': 'im Dschungelcamp'}
+{'id': 35, 'action_s': 'gibt', 'action_p': 'geben', 'text': 'Benefizkonzert'}
+{'id': 36, 'action_s': 'glaubt', 'action_p': 'glauben', 'text': 'an den Weltuntergang'}
+{'id': 37, 'action_s': 'hasst', 'action_p': 'hassen', 'text': 'Schweiz'}
+{'id': 38, 'action_s': 'hört', 'action_p': 'hören', 'text': 'gern DJ Bobo'}
+{'id': 39, 'action_s': 'ist', 'action_p': 'sind', 'text': 'Alkoholiker'}
+{'id': 40, 'action_s': 'ist', 'action_p': 'sind', 'text': 'Tierquäler'}
+{'id': 41, 'action_s': 'ist', 'action_p': 'sind', 'text': 'zu dick'}
+{'id': 42, 'action_s': 'klaut', 'action_p': 'klauen', 'text': 'Guezli in der Migros'}
+{'id': 43, 'action_s': 'lässts', 'action_p': 'lassen es', 'text': 'krachen'}
+{'id': 44, 'action_s': 'läuft', 'action_p': 'laufen', 'text': 'Amok'}
+{'id': 45, 'action_s': 'lobt', 'action_p': 'loben', 'text': 'Justin Bieber'}
+{'id': 46, 'action_s': 'packt', 'action_p': 'packen', 'text': 'aus'}
+{'id': 47, 'action_s': 'schlitzt', 'action_p': 'schlitzen', 'text': 'Schweizer auf'}
+{'id': 48, 'action_s': 'spielt', 'action_p': 'spielen', 'text': 'Killerspiele'}
+{'id': 49, 'action_s': 'steigt', 'action_p': 'steigen', 'text': 'in den Container'}
+{'id': 50, 'action_s': 'stirbt', 'action_p': 'sterben', 'text': 'im Tiefschnee'}
+{'id': 51, 'action_s': 'strippt', 'action_p': 'strippen', 'text': 'jetzt Vollzeit'}
+{'id': 52, 'action_s': 'stürmt', 'action_p': 'stürmen', 'text': 'Primarschule'}
+{'id': 53, 'action_s': 'trinkt', 'action_p': 'trinken', 'text': 'Bier'}
+{'id': 54, 'action_s': 'tritt', 'action_p': 'treten', 'text': 'am Eurovision Contest auf'}
+{'id': 55, 'action_s': 'tritt', 'action_p': 'treten', 'text': 'zurück'}
+{'id': 56, 'action_s': 'überfällt', 'action_p': 'überfallen', 'text': 'Geschäftsmänner'}
+{'id': 57, 'action_s': 'will', 'action_p': 'wollen', 'text': 'EU Beitritt'}
+{'id': 58, 'action_s': 'will', 'action_p': 'wollen', 'text': 'Gesundheitsreform'}
+{'id': 59, 'action_s': 'will', 'action_p': 'wollen', 'text': 'Staat enteignen'}
+{'id': 60, 'action_s': 'wird Vater', 'action_p': 'werden Eltern', 'text': ''}
+{'id': 61, 'action_s': 'wurde', 'action_p': 'wurden', 'text': 'gemobbt'}
+{'id': 62, 'action_s': 'zieht', 'action_p': 'ziehen', 'text': 'vor Gericht'}
+{'id': 63, 'action_s': 'zockt', 'action_p': 'zocken', 'text': 'ab'}

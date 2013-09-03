@@ -1,39 +1,39 @@
-{'text': 'Achtung'}
-{'text': 'Arme Schweiz'}
-{'text': 'Aufgedeckt'}
-{'text': 'Bitte nicht'}
-{'text': 'Breaking news'}
-{'text': 'Chaos'}
-{'text': 'Der Beweis'}
-{'text': 'Die neue Gefahr'}
-{'text': 'Diesen Sommer'}
-{'text': 'Dramatisch'}
-{'text': 'Ein Historischer Tag'}
-{'text': 'Endlich'}
-{'text': 'Entlarvt'}
-{'text': 'Enttarnt'}
-{'text': 'Erschreckend'}
-{'text': 'Es ist soweit'}
-{'text': 'Exklusiv'}
-{'text': 'Hier kommt es'}
-{'text': 'Hilfe'}
-{'text': 'Horror'}
-{'text': 'Jetzt erst recht'}
-{'text': 'Mamma mia'}
-{'text': 'Nun'}
-{'text': 'Ohje'}
-{'text': 'Provokation'}
-{'text': 'Schock'}
-{'text': 'Schon wieder'}
-{'text': 'Sensationell'}
-{'text': 'Skandal'}
-{'text': 'Skandalös'}
-{'text': 'So läuft der Hase'}
-{'text': 'So nicht'}
-{'text': 'Star des Tages'}
-{'text': 'Unfall'}
-{'text': 'Unglaublich'}
-{'text': 'Vom Regen in die Traufe'}
-{'text': 'Wahnsinn'}
-{'text': 'Warum nur'}
-{'text': 'Wir decken auf'}
+{'id': 1, 'text': 'Achtung'}
+{'id': 2, 'text': 'Arme Schweiz'}
+{'id': 3, 'text': 'Aufgedeckt'}
+{'id': 4, 'text': 'Bitte nicht'}
+{'id': 5, 'text': 'Breaking news'}
+{'id': 6, 'text': 'Chaos'}
+{'id': 7, 'text': 'Der Beweis'}
+{'id': 8, 'text': 'Die neue Gefahr'}
+{'id': 9, 'text': 'Diesen Sommer'}
+{'id': 10, 'text': 'Dramatisch'}
+{'id': 11, 'text': 'Ein Historischer Tag'}
+{'id': 12, 'text': 'Endlich'}
+{'id': 13, 'text': 'Entlarvt'}
+{'id': 14, 'text': 'Enttarnt'}
+{'id': 15, 'text': 'Erschreckend'}
+{'id': 16, 'text': 'Es ist soweit'}
+{'id': 17, 'text': 'Exklusiv'}
+{'id': 18, 'text': 'Hier kommt es'}
+{'id': 19, 'text': 'Hilfe'}
+{'id': 20, 'text': 'Horror'}
+{'id': 21, 'text': 'Jetzt erst recht'}
+{'id': 22, 'text': 'Mamma mia'}
+{'id': 23, 'text': 'Nun'}
+{'id': 24, 'text': 'Ohje'}
+{'id': 25, 'text': 'Provokation'}
+{'id': 26, 'text': 'Schock'}
+{'id': 27, 'text': 'Schon wieder'}
+{'id': 28, 'text': 'Sensationell'}
+{'id': 29, 'text': 'Skandal'}
+{'id': 30, 'text': 'Skandalös'}
+{'id': 31, 'text': 'So läuft der Hase'}
+{'id': 32, 'text': 'So nicht'}
+{'id': 33, 'text': 'Star des Tages'}
+{'id': 34, 'text': 'Unfall'}
+{'id': 35, 'text': 'Unglaublich'}
+{'id': 36, 'text': 'Vom Regen in die Traufe'}
+{'id': 37, 'text': 'Wahnsinn'}
+{'id': 38, 'text': 'Warum nur'}
+{'id': 39, 'text': 'Wir decken auf'}

@@ -1,31 +1,31 @@
-{'text': 'Bemittleidenswerte'}
-{'text': 'Beneidenswerte'}
-{'text': 'Böse'}
-{'text': 'Deutsche'}
-{'text': 'Eifersüchtige'}
-{'text': 'Fette'}
-{'text': 'Fiese'}
-{'text': 'Gefährliche'}
-{'text': 'Gemeine'}
-{'text': 'Gerissene'}
-{'text': 'Hässliche'}
-{'text': 'Korrupte'}
-{'text': 'Kriminelle'}
-{'text': 'Linksautonome'}
-{'text': 'Mafiöse'}
-{'text': 'Minderjährige'}
-{'text': 'Naive'}
-{'text': 'Neoliberale'}
-{'text': 'Notgeile'}
-{'text': 'Obdachlose'}
-{'text': 'Obszöne'}
-{'text': 'Österreichische'}
-{'text': 'Osteuropäische'}
-{'text': 'Pädophile'}
-{'text': 'Radikale'}
-{'text': 'Rechtsextreme'}
-{'text': 'Rücksichtslose'}
-{'text': 'Schlimme'}
-{'text': 'Schwule'}
-{'text': 'Unfähige'}
-{'text': 'Vogelfreie'}
+{'id': 1, 'text': 'Bemittleidenswerte'}
+{'id': 2, 'text': 'Beneidenswerte'}
+{'id': 3, 'text': 'Böse'}
+{'id': 4, 'text': 'Deutsche'}
+{'id': 5, 'text': 'Eifersüchtige'}
+{'id': 6, 'text': 'Fette'}
+{'id': 7, 'text': 'Fiese'}
+{'id': 8, 'text': 'Gefährliche'}
+{'id': 9, 'text': 'Gemeine'}
+{'id': 10, 'text': 'Gerissene'}
+{'id': 11, 'text': 'Hässliche'}
+{'id': 12, 'text': 'Korrupte'}
+{'id': 13, 'text': 'Kriminelle'}
+{'id': 14, 'text': 'Linksautonome'}
+{'id': 15, 'text': 'Mafiöse'}
+{'id': 16, 'text': 'Minderjährige'}
+{'id': 17, 'text': 'Naive'}
+{'id': 18, 'text': 'Neoliberale'}
+{'id': 19, 'text': 'Notgeile'}
+{'id': 20, 'text': 'Obdachlose'}
+{'id': 21, 'text': 'Obszöne'}
+{'id': 22, 'text': 'Österreichische'}
+{'id': 23, 'text': 'Osteuropäische'}
+{'id': 24, 'text': 'Pädophile'}
+{'id': 25, 'text': 'Radikale'}
+{'id': 26, 'text': 'Rechtsextreme'}
+{'id': 27, 'text': 'Rücksichtslose'}
+{'id': 28, 'text': 'Schlimme'}
+{'id': 29, 'text': 'Schwule'}
+{'id': 30, 'text': 'Unfähige'}
+{'id': 31, 'text': 'Vogelfreie'}
