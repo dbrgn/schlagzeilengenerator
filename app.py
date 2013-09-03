@@ -13,7 +13,8 @@ import os
 import sys
 from random import randrange
 from urlparse import urlparse, urlunparse
-from base64 import b64decode
+from urllib import quote_plus
+from base64 import b64encode, b64decode
 
 from flask import Flask, request, redirect
 from flask import render_template, jsonify
@@ -76,7 +77,8 @@ def generate_headline(ids=None):
             database.
 
     Returns:
-        Tuple of parts (intro, adjective, prefix, suffix, action)
+        Tuple of parts and permalink (intro, adjective, prefix, suffix, action,
+        permalink)
 
     """
 
@@ -101,6 +103,7 @@ def generate_headline(ids=None):
         d_prefix = mongo_get_random('prefix')
         d_suffix = mongo_get_random('suffix')
         d_action = mongo_get_random('action')
+        ids = (d_intro['id'], d_adjective['id'], d_prefix['id'], d_suffix['id'], d_action['id'])
 
     # Get data from mongo dictionaries
     case = d_suffix['case']
@@ -113,7 +116,10 @@ def generate_headline(ids=None):
     else:
         action = '%s %s' % (d_action['action_s'], d_action['text'])
 
-    return intro, adjective, prefix, suffix, action.strip()
+    # Build permalink
+    permalink = b64encode(','.join(map(str, ids)))
+
+    return intro, adjective, prefix, suffix, action.strip(), permalink
 
 
 ### Views ###
@@ -143,12 +149,12 @@ def headline(permalink=None):
 
     # Fetch parts
     if permalink is None:
-        intro, adjective, prefix, suffix, action = generate_headline()
+        intro, adjective, prefix, suffix, action, link = generate_headline()
     else:
         try:
             ids = map(int, b64decode(permalink).split(','))
             assert len(ids) == 5, 'There must be 5 IDs in permalink'
-            intro, adjective, prefix, suffix, action = generate_headline(ids)
+            intro, adjective, prefix, suffix, action, link = generate_headline(ids)
         except (ValueError, AssertionError, TypeError):
             error = 'Invalid permalink.'
 
@@ -160,6 +166,7 @@ def headline(permalink=None):
             'subject': '%s-%s' % (prefix, suffix),
             'action': action,
             'headline': '%s: %s %s-%s %s' % (intro, adjective, prefix, suffix, action),
+            'permalink': quote_plus(link),
         }
     else:
         context = {'error': 'Invalid permalink.'}

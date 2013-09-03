@@ -113,11 +113,19 @@ h3 {
     left: 40px;
 }
 
-#copy {
+#copy, #permalink {
     font: .7em/1.5 Helvetica, Arial, Sans-Serif;
+    text-shadow: 1px 0px 1px #000;
     position: fixed;
+}
+
+#copy {
     bottom: 30px;
     right: 40px;
-    text-shadow: 1px 0px 1px #000;
     text-align: right;
+}
+
+#permalink {
+    bottom: 65px;
+    left: 40px;
 }
