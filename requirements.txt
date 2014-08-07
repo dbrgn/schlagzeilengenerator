@@ -1,6 +1,6 @@
-Flask==0.9
-gunicorn==0.17.2
-gevent==0.13.8
-pymongo==2.4.1
-flask-heroku==0.1.4
-newrelic==1.9.0.21
+Flask==0.10.1
+gunicorn==19.1.0
+gevent==1.0.1
+pymongo==2.7.2
+flask-heroku==0.1.9
+newrelic==2.24.0.21
