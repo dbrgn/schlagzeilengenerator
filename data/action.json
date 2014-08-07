@@ -68,3 +68,6 @@
 {'id': 68, 'action_s': 'sammelt', 'action_p': 'sammeln', 'text': 'Nazi-Kunst'}
 {'id': 69, 'action_s': 'schlägt', 'action_p': 'schlagen', 'text': 'zu'}
 {'id': 70, 'action_s': 'hat', 'action_p': 'haben', 'text': 'ein Drogenproblem'}
+{'id': 71, 'action_s': 'marschiert', 'action_p': 'marschieren', 'text': 'in Palästina ein'}
+{'id': 72, 'action_s': 'macht', 'action_p': 'machen', 'text': 'Nackt-Selfies'}
+{'id': 73, 'action_s': 'schmuggelt', 'action_p': 'schmuggeln', 'text': 'Drogen ins Bundeshaus'}
