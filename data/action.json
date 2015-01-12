@@ -72,3 +72,4 @@
 {'id': 72, 'action_s': 'macht', 'action_p': 'machen', 'text': 'Nackt-Selfies'}
 {'id': 73, 'action_s': 'schmuggelt', 'action_p': 'schmuggeln', 'text': 'Drogen ins Bundeshaus'}
 {'id': 74, 'action_s': 'verlangt', 'action_p': 'verlangen', 'text': 'ISIS-Fahne'}
+{'id': 75, 'action_s': 'joggt', 'action_p': 'joggen', 'text': 'im Terror-Park von Paris'}
