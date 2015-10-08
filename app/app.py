@@ -19,17 +19,35 @@ from base64 import b64encode, b64decode
 from flask import Flask, request, redirect
 from flask import render_template, jsonify
 from flask_heroku import Heroku
-from pymongo import Connection
+from pymongo import MongoClient
 
 
 app = Flask(__name__)
 heroku = Heroku(app)
 
 
-connection = Connection(app.config['MONGODB_HOST'], app.config['MONGODB_PORT'])
-db = connection[app.config['MONGODB_DB']]
-if app.config['MONGODB_USER']:
-    db.authenticate(app.config['MONGODB_USER'], app.config['MONGODB_PASSWORD'])
+# Environment variables
+env = os.environ.get
+true_values = ['1', 'true', 'y', 'yes', 1, True]
+def require_env(name):
+    value = env(name)
+    assert value, 'Missing {} env variable'.format(name)
+    return value
+
+
+# MongoDB connection
+def get_mongo_client(host, port):
+    print('Connecting to mongodb at %s:%s...' % (host, port))
+    client = MongoClient(mongo_host, mongo_port,
+                         connect=True,
+                         serverSelectionTimeoutMS=6000,
+                         connectTimeoutMS=2000,
+                         socketTimeoutMS=1000)
+    db = client[env('MONGODB_DB', 'schlagzeilengenerator')]
+    if env('MONGODB_USER'):
+        print('Authenticating against mongodb...')
+        db.authenticate(require_env('MONGODB_USER'), require_env('MONGODB_PASSWORD'))
+    return db
 
 
 ### Helper functions ###
@@ -43,7 +61,7 @@ def request_wants_json():
 
 
 def mongo_get_random(collection_name):
-    collection = db[collection_name]
+    collection = app.db[collection_name]
     count = collection.count()
     if count == 0:
         print >> sys.stderr, 'No data in the database.'
@@ -56,7 +74,7 @@ def mongo_get_random(collection_name):
 
 
 def mongo_get_by_id(collection_name, item_id):
-    collection = db[collection_name]
+    collection = app.db[collection_name]
     cursor = collection.find({'id': item_id}).limit(1)
     if cursor.count() == 0:
         errmsg = '%s item with ID %d not found.' % (collection_name, item_id)
@@ -177,6 +195,12 @@ def headline(permalink=None):
 
 
 if __name__ == '__main__':
+    # Connect to MongoDB
+    mongo_host = env('MONGODB_HOST', '127.0.0.1')
+    mongo_port = int(env('MONGODB_PORT', '27017'))
+    app.db = get_mongo_client()
+
+    # Serve
     port = int(os.environ.get('PORT', 8000))
-    debug = os.environ.get('DEBUG') in ['true', 'True', 'TRUE', 't', 'T', '1']
+    debug = env('DEBUG', 'False') in true_values
     app.run(host='0.0.0.0', port=port, debug=debug)
