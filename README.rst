@@ -63,6 +63,19 @@ Setup (Heroku)
     $ git push heroku master
 
 
+Setup (Docker)
+==============
+
+Start containers::
+
+    $ docker-compose build
+    $ docker-compose up -d
+
+To see the logs::
+
+    $ docker-compose logs
+
+
 License
 =======
 
