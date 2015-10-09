@@ -1,23 +1,25 @@
-FROM alpine:3.2
+FROM ubuntu:14.04
 MAINTAINER Danilo Bargen <mail@dbrgn.ch>
 
 # Env vars
-ENV PYTHONUNBUFFERED=1
+ENV PYTHONUNBUFFERED=1 \
+    DEBIAN_FRONTEND=noninteractive
 
 # Dependencies
-RUN apk add --update \
-    python3 python3-dev py-pip \
-    uwsgi uwsgi-python3 \
-    git \
-    gcc libc-dev
+RUN apt-get update \
+    && apt-get install -y \
+       python3 python3-pip \
+       uwsgi uwsgi-plugin-python3 \
+       mongodb-clients
 
+# Add code
 ADD . /code
 
 # Install pypi dependencies
 RUN pip3 install -r /code/requirements.txt
 
 # Server directory
-RUN adduser -D generator \
+RUN useradd -m generator \
     && chown -R generator:generator /code
 
 # Expose volume
@@ -30,13 +32,10 @@ USER generator
 WORKDIR /code
 EXPOSE 8000
 CMD ["uwsgi", \
-     "--plugins-dir", "/usr/lib/uwsgi", \
      "--plugin", "python3", \
      "--socket", "0.0.0.0:8000", \
      "-w", "app:app", \
      "--master", \
      "--processes", "2", \
      "--threads", "2", \
-     "--max-requests", "20", \
-     "--reload-mercy", "10", \
-     "--worker-reload-mercy", "10"]
+     "--max-requests", "20"]

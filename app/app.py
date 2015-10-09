@@ -33,17 +33,22 @@ def require_env(name):
 
 # MongoDB connection
 def get_mongo_client(host, port):
-    print('Connecting to mongodb at %s:%s...' % (host, port))
+    print('[schlagzeilengenerator] Connecting to mongodb at %s:%s...' % (host, port))
     client = MongoClient(mongo_host, mongo_port,
-                         connect=True,
+                         connect=False,
                          serverSelectionTimeoutMS=6000,
                          connectTimeoutMS=2000,
                          socketTimeoutMS=1000)
     db = client[env('MONGODB_DB', 'schlagzeilengenerator')]
     if env('MONGODB_USER'):
-        print('Authenticating against mongodb...')
+        print('[schlagzeilengenerator] Authenticating against mongodb...')
         db.authenticate(require_env('MONGODB_USER'), require_env('MONGODB_PASSWORD'))
     return db
+
+# Connect to MongoDB
+mongo_host = env('MONGODB_HOST', '127.0.0.1')
+mongo_port = int(env('MONGODB_PORT', '27017'))
+app.db = get_mongo_client(mongo_host, mongo_port)
 
 
 ### Helper functions ###
@@ -60,7 +65,7 @@ def mongo_get_random(collection_name):
     collection = app.db[collection_name]
     count = collection.count()
     if count == 0:
-        print >> sys.stderr, 'No data in the database.'
+        print >> sys.stderr, '[schlagzeilengenerator] No data in the database.'
         sys.exit(2)
     elif count == 1:
         offset = 0
@@ -73,8 +78,8 @@ def mongo_get_by_id(collection_name, item_id):
     collection = app.db[collection_name]
     cursor = collection.find({'id': item_id}).limit(1)
     if cursor.count() == 0:
-        errmsg = '%s item with ID %d not found.' % (collection_name, item_id)
-        print >> sys.stderr, errmsg
+        errmsg = '[schlagzeilengenerator] %s item with ID %d not found.'
+        print >> sys.stderr, errmsg % (collection_name, item_id)
         raise ValueError(errmsg)
     return cursor[0]
 
@@ -95,7 +100,7 @@ def generate_headline(ids=None):
         permalink)
 
     """
-    print('Generating a headline...')
+    print('[schlagzeilengenerator] Generating a headline...')
 
     # Correct endings
     adjective_endings = {
@@ -181,16 +186,11 @@ def headline(permalink=None):
     return render_template('headline.html', **context), status_code
 
 
-if env('DEBUG', 'False') in true_values:
+if env('DEBUG', 'False').lower() in true_values:
     app.config['DEBUG'] = True
 
-if __name__ == '__main__':
-    # Connect to MongoDB
-    mongo_host = env('MONGODB_HOST', '127.0.0.1')
-    mongo_port = int(env('MONGODB_PORT', '27017'))
-    app.db = get_mongo_client()
 
-    # Serve
+if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8000))
-    debug = env('DEBUG', 'False') in true_values
+    debug = env('DEBUG', 'False').lower() in true_values
     app.run(host='0.0.0.0', port=port, debug=debug)
