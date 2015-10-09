@@ -65,7 +65,7 @@ def mongo_get_random(collection_name):
     collection = app.db[collection_name]
     count = collection.count()
     if count == 0:
-        print >> sys.stderr, '[schlagzeilengenerator] No data in the database.'
+        print('[schlagzeilengenerator] No data in the database.', file=sys.stderr)
         sys.exit(2)
     elif count == 1:
         offset = 0
@@ -79,7 +79,7 @@ def mongo_get_by_id(collection_name, item_id):
     cursor = collection.find({'id': item_id}).limit(1)
     if cursor.count() == 0:
         errmsg = '[schlagzeilengenerator] %s item with ID %d not found.'
-        print >> sys.stderr, errmsg % (collection_name, item_id)
+        print(errmsg % (collection_name, item_id), file=sys.stderr)
         raise ValueError(errmsg)
     return cursor[0]
 
