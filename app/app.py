@@ -1,4 +1,3 @@
-# coding=utf-8
 """
     Schlagzeilengenerator
     ~~~~~~~~~~~~~~~~~~~~~
@@ -12,8 +11,7 @@
 import os
 import sys
 from random import randrange
-from urlparse import urlparse, urlunparse
-from urllib import quote_plus
+from urllib.parse import urlparse, urlunparse, quote_plus
 from base64 import b64encode, b64decode
 
 from flask import Flask, request, redirect
@@ -135,7 +133,7 @@ def generate_headline(ids=None):
         action = '%s %s' % (d_action['action_s'], d_action['text'])
 
     # Build permalink
-    permalink = b64encode(','.join(map(str, ids)))
+    permalink = b64encode(b','.join(map(bytes, ids)))
 
     return intro, adjective, prefix, suffix, action.strip(), permalink
 
