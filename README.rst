@@ -36,11 +36,11 @@ Prerequisites: Python 2, Pip, MongoDB
 
 4. Import testdata into a MongoDB database called "schlagzeilengenerator"::
 
-    $ mongoimport --drop -d schlagzeilengenerator -c intro --file data/intro.json
-    $ mongoimport --drop -d schlagzeilengenerator -c adjective --file data/adjective.json
-    $ mongoimport --drop -d schlagzeilengenerator -c prefix --file data/prefix.json
-    $ mongoimport --drop -d schlagzeilengenerator -c suffix --file data/suffix.json
-    $ mongoimport --drop -d schlagzeilengenerator -c action --file data/action.json
+    $ mongoimport --drop -d schlagzeilengenerator -c intro --file mongo/data/intro.json
+    $ mongoimport --drop -d schlagzeilengenerator -c adjective --file mongo/data/adjective.json
+    $ mongoimport --drop -d schlagzeilengenerator -c prefix --file mongo/data/prefix.json
+    $ mongoimport --drop -d schlagzeilengenerator -c suffix --file mongo/data/suffix.json
+    $ mongoimport --drop -d schlagzeilengenerator -c action --file mongo/data/action.json
 
 5. Export some environment variables::
 
@@ -49,18 +49,6 @@ Prerequisites: Python 2, Pip, MongoDB
 6. Run development server::
 
     $ python app.py
-
-
-Setup (Heroku)
-==============
-
-::
-
-    $ heroku apps:create --region eu [appname]
-    $ heroku addons:add mongolab:sandbox
-    $ heroku addons:add newrelic:standard
-    $ heroku addons:open newrelic:standard
-    $ git push heroku master
 
 
 Setup (Docker)

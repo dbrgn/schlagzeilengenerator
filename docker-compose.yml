@@ -1,6 +1,5 @@
 mongo:
   build: ./mongo
-  command: --smallfiles --storageEngine wiredTiger
   restart: always
   expose:
     - 27017
