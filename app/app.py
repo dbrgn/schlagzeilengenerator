@@ -137,7 +137,7 @@ def generate_headline(ids=None):
         action = '%s %s' % (d_action['action_s'], d_action['text'])
 
     # Build permalink
-    permalink = b64encode(b','.join(map(bytes, ids)))
+    permalink = b64encode(b','.join(str(id).encode('ascii') for id in ids))
 
     return intro, adjective, prefix, suffix, action.strip(), permalink
 
