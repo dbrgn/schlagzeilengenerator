@@ -16,12 +16,10 @@ from base64 import b64encode, b64decode
 
 from flask import Flask, request, redirect
 from flask import render_template, jsonify
-from flask_heroku import Heroku
 from pymongo import MongoClient
 
 
 app = Flask(__name__)
-heroku = Heroku(app)
 
 
 # Environment variables
@@ -97,6 +95,7 @@ def generate_headline(ids=None):
         permalink)
 
     """
+    print('Generating a headline...')
 
     # Correct endings
     adjective_endings = {
@@ -140,16 +139,6 @@ def generate_headline(ids=None):
 
 ### Views ###
 
-@app.before_request
-def redirect_nonwww():
-    """Redirect non-www requests to www."""
-    urlparts = urlparse(request.url)
-    if urlparts.netloc == 'schlagzeilengenerator.ch':
-        urlparts_list = list(urlparts)
-        urlparts_list[1] = 'www.schlagzeilengenerator.ch'
-        return redirect(urlunparse(urlparts_list), code=301)
-
-
 @app.context_processor
 def inject_url():
     """Inject the website-URL into the context."""
@@ -191,6 +180,9 @@ def headline(permalink=None):
         return jsonify(context), status_code
     return render_template('headline.html', **context), status_code
 
+
+if env('DEBUG', 'False') in true_values:
+    app.config['DEBUG'] = True
 
 if __name__ == '__main__':
     # Connect to MongoDB
