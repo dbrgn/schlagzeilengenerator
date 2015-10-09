@@ -137,7 +137,7 @@ def generate_headline(ids=None):
         action = '%s %s' % (d_action['action_s'], d_action['text'])
 
     # Build permalink
-    permalink = b64encode(b','.join(str(id).encode('ascii') for id in ids))
+    permalink = b64encode(b','.join(str(i).encode('ascii') for i in ids))
 
     return intro, adjective, prefix, suffix, action.strip(), permalink
 
@@ -162,7 +162,7 @@ def headline(permalink=None):
         intro, adjective, prefix, suffix, action, link = generate_headline()
     else:
         try:
-            ids = map(int, b64decode(permalink).split(','))
+            ids = [int(i) for i in b64decode(permalink).decode('ascii').split(',')]
             assert len(ids) == 5, 'There must be 5 IDs in permalink'
             intro, adjective, prefix, suffix, action, link = generate_headline(ids)
         except (ValueError, AssertionError, TypeError):
