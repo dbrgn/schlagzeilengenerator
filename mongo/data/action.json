@@ -72,3 +72,7 @@
 {'id': 72, 'action_s': 'macht', 'action_p': 'machen', 'text': 'Nackt-Selfies'}
 {'id': 73, 'action_s': 'schmuggelt', 'action_p': 'schmuggeln', 'text': 'Drogen ins Bundeshaus'}
 {'id': 74, 'action_s': 'verlangt', 'action_p': 'verlangen', 'text': 'ISIS-Fahne'}
+{'id': 75, 'action_s': 'trauert', 'action_p': 'trauern', 'text': 'um Terror-Opfer'}
+{'id': 76, 'action_s': 'wählt', 'action_p': 'wählen', 'text': 'den Freitod'}
+{'id': 77, 'action_s': 'trägt', 'action_p': 'tragen', 'text': 'Frauenkleidung'}
+{'id': 78, 'action_s': 'verübt', 'action_p': 'verüben', 'text': 'Terror-Anschlag in Paris'}

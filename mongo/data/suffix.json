@@ -64,3 +64,6 @@
 {'id': 64, 'text': 'Zocker', 'case': 'm'}
 {'id': 65, 'text': 'Obama', 'case': 'm'}
 {'id': 66, 'text': 'Geheimdienst', 'case': 'm'}
+{'id': 67, 'text': 'Mohammed', 'case': 'm'}
+{'id': 68, 'text': 'Terroristen', 'case': 'p'}
+{'id': 69, 'text': 'Islamisten', 'case': 'p'}
