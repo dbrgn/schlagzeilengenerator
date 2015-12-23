@@ -67,3 +67,5 @@
 {'id': 67, 'text': 'Mohammed', 'case': 'm'}
 {'id': 68, 'text': 'Terroristen', 'case': 'p'}
 {'id': 69, 'text': 'Islamisten', 'case': 'p'}
+{'id': 70, 'text': 'Blatter', 'case': 'm'}
+{'id': 71, 'text': 'Grabscher', 'case': 'm'}
