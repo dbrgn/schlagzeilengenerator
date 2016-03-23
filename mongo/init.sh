@@ -9,8 +9,8 @@ set -e
 MONGO_PID=$!
 
 # Sleep a bit
-echo "Waiting 25s for mongod to start..."
-sleep 25
+echo "Waiting 30s for mongod to start..."
+sleep 30
 
 # Import data
 mongoimport -d schlagzeilengenerator -c intro --file /tmp/data/intro.json
