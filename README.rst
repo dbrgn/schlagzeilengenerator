@@ -15,7 +15,7 @@ to `application/json`.
 
 ::
 
-    $ curl -H "accept: application/json" http://www.schlagzeilengenerator.ch/
+    curl -H "accept: application/json" http://www.schlagzeilengenerator.ch/
 
 
 Setup (Local)
@@ -27,28 +27,28 @@ Prerequisites: Python 2, Pip, MongoDB
 
 2. If desired, create and activate a virtualenv::
 
-    $ virtualenv -p /usr/bin/python3 VIRTUAL
-    $ source VIRTUAL/bin/activate
+    virtualenv -p /usr/bin/python3 VIRTUAL
+    source VIRTUAL/bin/activate
 
 3. Install requirements::
 
-    $ pip install -r app/requirements.txt
+    pip install -r app/requirements.txt
 
 4. Import testdata into a MongoDB database called "schlagzeilengenerator"::
 
-    $ mongoimport --drop -d schlagzeilengenerator -c intro --file mongo/data/intro.json
-    $ mongoimport --drop -d schlagzeilengenerator -c adjective --file mongo/data/adjective.json
-    $ mongoimport --drop -d schlagzeilengenerator -c prefix --file mongo/data/prefix.json
-    $ mongoimport --drop -d schlagzeilengenerator -c suffix --file mongo/data/suffix.json
-    $ mongoimport --drop -d schlagzeilengenerator -c action --file mongo/data/action.json
+    mongoimport --drop -d schlagzeilengenerator -c intro --file mongo/data/intro.json
+    mongoimport --drop -d schlagzeilengenerator -c adjective --file mongo/data/adjective.json
+    mongoimport --drop -d schlagzeilengenerator -c prefix --file mongo/data/prefix.json
+    mongoimport --drop -d schlagzeilengenerator -c suffix --file mongo/data/suffix.json
+    mongoimport --drop -d schlagzeilengenerator -c action --file mongo/data/action.json
 
 5. Export some environment variables::
 
-    $ source env/dev
+    source env/dev
 
 6. Run development server::
 
-    $ python app/app.py
+    python app/app.py
 
 
 Setup (Docker)
@@ -56,12 +56,12 @@ Setup (Docker)
 
 Start containers::
 
-    $ docker-compose build
-    $ docker-compose up -d
+    docker-compose build
+    docker-compose up -d
 
 To see the logs::
 
-    $ docker-compose logs
+    docker-compose logs
 
 
 License
