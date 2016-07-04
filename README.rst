@@ -27,12 +27,12 @@ Prerequisites: Python 2, Pip, MongoDB
 
 2. If desired, create and activate a virtualenv::
 
-    $ virtualenv --no-site-packages VIRTUAL
+    $ virtualenv -p /usr/bin/python3 VIRTUAL
     $ source VIRTUAL/bin/activate
 
 3. Install requirements::
 
-    $ pip install -r requirements.txt
+    $ pip install -r app/requirements.txt
 
 4. Import testdata into a MongoDB database called "schlagzeilengenerator"::
 
@@ -48,7 +48,7 @@ Prerequisites: Python 2, Pip, MongoDB
 
 6. Run development server::
 
-    $ python app.py
+    $ python app/app.py
 
 
 Setup (Docker)
