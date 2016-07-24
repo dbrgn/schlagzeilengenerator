@@ -1,20 +1,10 @@
-mongo:
-  build: ./mongo
-  restart: always
-  expose:
-    - 27017
-
 app:
   build: ./app
   restart: always
   environment:
-    MONGODB_HOST: 'mongo'
-    MONGODB_PORT: 27017
     DEBUG: 'false'
   expose:
     - 8000
-  links:
-    - mongo
   volumes:
     - /code/static
 

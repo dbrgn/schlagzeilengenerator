@@ -1,3 +1,2 @@
 export DEBUG=True
 export PORT=8000
-export MONGOLAB_URI=mongodb://localhost/schlagzeilengenerator

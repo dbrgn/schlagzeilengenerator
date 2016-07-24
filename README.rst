@@ -21,7 +21,7 @@ to `application/json`.
 Setup (Local)
 =============
 
-Prerequisites: Python 2, Pip, MongoDB
+Prerequisites: Python 3, Pip
 
 1. Clone repository
 
@@ -34,21 +34,13 @@ Prerequisites: Python 2, Pip, MongoDB
 
     pip install -r app/requirements.txt
 
-4. Import testdata into a MongoDB database called "schlagzeilengenerator"::
-
-    mongoimport --drop -d schlagzeilengenerator -c intro --file mongo/data/intro.json
-    mongoimport --drop -d schlagzeilengenerator -c adjective --file mongo/data/adjective.json
-    mongoimport --drop -d schlagzeilengenerator -c prefix --file mongo/data/prefix.json
-    mongoimport --drop -d schlagzeilengenerator -c suffix --file mongo/data/suffix.json
-    mongoimport --drop -d schlagzeilengenerator -c action --file mongo/data/action.json
-
-5. Export some environment variables::
+4. Export some environment variables::
 
     source env/dev
 
-6. Run development server::
+5. Run development server::
 
-    python app/app.py
+    DEBUG=true python app/app.py
 
 
 Setup (Docker)
