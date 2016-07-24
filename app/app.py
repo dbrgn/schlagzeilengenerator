@@ -4,19 +4,19 @@
 
     A small web application to generate tabloid press headlines.
 
-    :copyright: (c) 2012 by Danilo Bargen, Simon Aebersold.
+    :copyright: (c) 2012-2016 by Danilo Bargen, Simon Aebersold.
     :license: BSD 3-clause, see LICENSE for more details.
 """
 
 import os
 import sys
-from random import randrange
-from urllib.parse import urlparse, urlunparse, quote_plus
+import random
+import json
+from urllib.parse import quote_plus
 from base64 import b64encode, b64decode
 
-from flask import Flask, request, redirect
+from flask import Flask, request
 from flask import render_template, jsonify
-from pymongo import MongoClient
 
 
 app = Flask(__name__)
@@ -31,57 +31,57 @@ def require_env(name):
     return value
 
 
-# MongoDB connection
-def get_mongo_client(host, port):
-    print('[schlagzeilengenerator] Connecting to mongodb at %s:%s...' % (host, port))
-    client = MongoClient(mongo_host, mongo_port,
-                         connect=False,
-                         serverSelectionTimeoutMS=6000,
-                         connectTimeoutMS=2000,
-                         socketTimeoutMS=1000)
-    db = client[env('MONGODB_DB', 'schlagzeilengenerator')]
-    if env('MONGODB_USER'):
-        print('[schlagzeilengenerator] Authenticating against mongodb...')
-        db.authenticate(require_env('MONGODB_USER'), require_env('MONGODB_PASSWORD'))
+# Data loading
+def load_data(directory):
+    print('[schlagzeilengenerator] Loading data from %s...' % directory)
+
+    def _load(part):
+        with open(os.path.join(directory, part + '.json')) as f:
+            lines = f.readlines()
+            return {x['id']: x for x in map(json.loads, lines)}
+
+    db = {
+        'intro': _load('intro'),
+        'adjective': _load('adjective'),
+        'prefix': _load('prefix'),
+        'suffix': _load('suffix'),
+        'action': _load('action'),
+    }
     return db
 
-# Connect to MongoDB
-mongo_host = env('MONGODB_HOST', '127.0.0.1')
-mongo_port = int(env('MONGODB_PORT', '27017'))
-app.db = get_mongo_client(mongo_host, mongo_port)
+
+app.db = load_data('data')
 
 
 ### Helper functions ###
 
 def request_wants_json():
     # Taken from http://flask.pocoo.org/snippets/45/
-    best = request.accept_mimetypes \
-        .best_match(['application/json', 'text/html'])
+    best = request.accept_mimetypes.best_match(['application/json', 'text/html'])
     return best == 'application/json' and \
         request.accept_mimetypes[best] > request.accept_mimetypes['text/html']
 
 
-def mongo_get_random(collection_name):
-    collection = app.db[collection_name]
-    count = collection.count()
-    if count == 0:
+def get_random(part):
+    """
+    Retrieve a random entry from the data dictionary.
+    """
+    collection = app.db[part]
+    if len(collection) == 0:
         print('[schlagzeilengenerator] No data in the database.', file=sys.stderr)
         sys.exit(2)
-    elif count == 1:
-        offset = 0
     else:
-        offset = randrange(1, count)
-    return collection.find().skip(offset).limit(1)[0]
+        return random.choice(list(collection.values()))
 
 
-def mongo_get_by_id(collection_name, item_id):
-    collection = app.db[collection_name]
-    cursor = collection.find({'id': item_id}).limit(1)
-    if cursor.count() == 0:
+def get_by_id(part, item_id):
+    collection = app.db[part]
+    item = collection.get(item_id)
+    if item is None:
         errmsg = '[schlagzeilengenerator] %s item with ID %d not found.'
-        print(errmsg % (collection_name, item_id), file=sys.stderr)
+        print(errmsg % (part, item_id), file=sys.stderr)
         raise ValueError(errmsg)
-    return cursor[0]
+    return item
 
 
 ### Headline generation ###
@@ -112,20 +112,20 @@ def generate_headline(ids=None):
 
     # Get random database entries
     if ids is not None:
-        d_intro = mongo_get_by_id('intro', ids[0])
-        d_adjective = mongo_get_by_id('adjective', ids[1])
-        d_prefix = mongo_get_by_id('prefix', ids[2])
-        d_suffix = mongo_get_by_id('suffix', ids[3])
-        d_action = mongo_get_by_id('action', ids[4])
+        d_intro = get_by_id('intro', ids[0])
+        d_adjective = get_by_id('adjective', ids[1])
+        d_prefix = get_by_id('prefix', ids[2])
+        d_suffix = get_by_id('suffix', ids[3])
+        d_action = get_by_id('action', ids[4])
     else:
-        d_intro = mongo_get_random('intro')
-        d_adjective = mongo_get_random('adjective')
-        d_prefix = mongo_get_random('prefix')
-        d_suffix = mongo_get_random('suffix')
-        d_action = mongo_get_random('action')
+        d_intro = get_random('intro')
+        d_adjective = get_random('adjective')
+        d_prefix = get_random('prefix')
+        d_suffix = get_random('suffix')
+        d_action = get_random('action')
         ids = (d_intro['id'], d_adjective['id'], d_prefix['id'], d_suffix['id'], d_action['id'])
 
-    # Get data from mongo dictionaries
+    # Get data from dictionaries
     case = d_suffix['case']
     intro = d_intro['text']
     adjective = d_adjective['text'] + adjective_endings[case]
