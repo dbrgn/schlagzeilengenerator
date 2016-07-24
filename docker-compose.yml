@@ -8,9 +8,9 @@ app:
   build: ./app
   restart: always
   environment:
-    MONGODB_HOST: mongo
+    MONGODB_HOST: 'mongo'
     MONGODB_PORT: 27017
-    DEBUG: true
+    DEBUG: 'false'
   expose:
     - 8000
   links:
