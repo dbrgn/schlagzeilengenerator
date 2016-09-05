@@ -105,7 +105,7 @@ def generate_headline(ids=None):
     # Correct endings
     adjective_endings = {
         'm': 'r',
-        'w': '',
+        'f': '',
         's': 's',
         'p': '',
     }

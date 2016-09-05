@@ -21,7 +21,7 @@
 {"id": 21, "text": "Ehemann", "case": "m"}
 {"id": 22, "text": "Euro-Turbo", "case": "m"}
 {"id": 23, "text": "Fanboy", "case": "m"}
-{"id": 24, "text": "Frau", "case": "w"}
+{"id": 24, "text": "Frau", "case": "f"}
 {"id": 25, "text": "Freier", "case": "m"}
 {"id": 26, "text": "Fürst", "case": "m"}
 {"id": 27, "text": "Gaddaffi", "case": "m"}
@@ -39,7 +39,7 @@
 {"id": 39, "text": "Kind", "case": "s"}
 {"id": 40, "text": "Kosovare", "case": "m"}
 {"id": 41, "text": "Mann", "case": "m"}
-{"id": 42, "text": "Merkel", "case": "w"}
+{"id": 42, "text": "Merkel", "case": "f"}
 {"id": 43, "text": "Metzger", "case": "m"}
 {"id": 44, "text": "Migrant", "case": "m"}
 {"id": 45, "text": "Mörder", "case": "m"}
@@ -51,11 +51,11 @@
 {"id": 51, "text": "Piraten", "case": "p"}
 {"id": 52, "text": "Plagiator", "case": "m"}
 {"id": 53, "text": "Präsident", "case": "m"}
-{"id": 54, "text": "Prostituierte", "case": "w"}
+{"id": 54, "text": "Prostituierte", "case": "f"}
 {"id": 55, "text": "Raser", "case": "m"}
 {"id": 56, "text": "Raubkopierer", "case": "p"}
 {"id": 57, "text": "Rentner", "case": "m"}
-{"id": 58, "text": "Sekte", "case": "w"}
+{"id": 58, "text": "Sekte", "case": "f"}
 {"id": 59, "text": "Triebtäter", "case": "m"}
 {"id": 60, "text": "Trottel", "case": "m"}
 {"id": 61, "text": "Tschutter", "case": "m"}
