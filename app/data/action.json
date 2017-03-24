@@ -24,7 +24,7 @@
 {"id": 24, "action_s": "", "action_p": "", "text": "voll daneben"}
 {"id": 25, "action_s": "", "action_p": "", "text": "von Motorboot zerfetzt"}
 {"id": 26, "action_s": "ärgert", "action_p": "ärgern", "text": "sich über Nacktvideo"}
-{"id": 27, "action_s": "belästigt", "action_p": "belästigen", "text": "Mädchen"}
+{"id": 27, "action_s": "belästigt", "action_p": "belästigen", "text": "Mädchen auf dem Schulweg"}
 {"id": 28, "action_s": "bescheisst", "action_p": "bescheissen", "text": "IV"}
 {"id": 29, "action_s": "dreht", "action_p": "drehen", "text": "durch"}
 {"id": 30, "action_s": "erschiesst", "action_p": "erschiessen", "text": "Präsidenten"}
@@ -81,3 +81,4 @@
 {"id": 81, "action_s": "joggt", "action_p": "joggen", "text": "im Terror-Park von Paris"}
 {"id": 82, "action_s": "filmt", "action_p": "filmen", "text": "heimlich Frauenfüsse"}
 {"id": 83, "action_s": "raubte", "action_p": "raubten", "text": "Grosi (87) aus"}
+{"id": 84, "action_s": "rettet", "action_p": "retten", "text": "verwahrlostes Mädchen (3)"}
