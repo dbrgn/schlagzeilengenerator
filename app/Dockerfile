@@ -1,5 +1,4 @@
-FROM alpine:3.12
-MAINTAINER Danilo Bargen <mail@dbrgn.ch>
+FROM docker.io/alpine:3.16
 
 # Env vars
 ENV PYTHONUNBUFFERED=1
