@@ -1,5 +1,4 @@
-FROM nginx:1.9
-MAINTAINER Danilo Bargen <mail@dbrgn.ch>
+FROM nginx:1.29
 
 COPY mime.types /etc/nginx/mime.types
 COPY drop.conf /etc/nginx/drop.conf
