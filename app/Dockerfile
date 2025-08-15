@@ -1,25 +1,16 @@
-FROM docker.io/alpine:3.16
+FROM ghcr.io/astral-sh/uv:alpine3.21
 
 # Env vars
 ENV PYTHONUNBUFFERED=1
 
 # Dependencies
 RUN apk add --update \
-    python3 python3-dev \
-    uwsgi uwsgi-python3 \
-    git \
-    gcc libc-dev \
-    curl
-
-# Install uv with pinned version using binary for better security
-ARG UV_VERSION=0.4.18
-RUN curl -LsSf https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-${UV_VERSION}-x86_64-unknown-linux-musl.tar.gz \
-    | tar -xzC /usr/local/bin --strip-components=1 \
-    && chmod +x /usr/local/bin/uv
+    uwsgi uwsgi-python3
 
 ADD . /code
 
 # Install dependencies using uv project management
+ENV UV_PROJECT=/code
 RUN uv sync
 
 # Server directory
@@ -36,9 +27,9 @@ USER generator
 WORKDIR /code
 EXPOSE 8000
 CMD ["uv", "run", "uwsgi", \
-     "--plugins-dir", "/usr/lib/uwsgi", \
      "--plugin", "python3", \
      "--socket", "0.0.0.0:8000", \
+     "--venv", "/code/.venv/", \
      "-w", "app:app", \
      "--master", \
      "--processes", "2", \
