@@ -33,6 +33,10 @@ Prerequisites: Python 3, [uv](https://docs.astral.sh/uv/)
 
     uv run python app.py
 
+While developing, if you want to run code formatting:
+
+    uv tool run black .
+
 ## Setup (Docker)
 
 Start containers:
