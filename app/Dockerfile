@@ -5,15 +5,22 @@ ENV PYTHONUNBUFFERED=1
 
 # Dependencies
 RUN apk add --update \
-    python3 python3-dev py-pip \
+    python3 python3-dev \
     uwsgi uwsgi-python3 \
     git \
-    gcc libc-dev
+    gcc libc-dev \
+    curl
+
+# Install uv with pinned version using binary for better security
+ARG UV_VERSION=0.4.18
+RUN curl -LsSf https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-${UV_VERSION}-x86_64-unknown-linux-musl.tar.gz \
+    | tar -xzC /usr/local/bin --strip-components=1 \
+    && chmod +x /usr/local/bin/uv
 
 ADD . /code
 
-# Install pypi dependencies
-RUN pip3 install -r /code/requirements.txt
+# Install dependencies using uv project management
+RUN uv sync
 
 # Server directory
 RUN adduser -D generator \
@@ -28,7 +35,7 @@ USER generator
 # Entry point
 WORKDIR /code
 EXPOSE 8000
-CMD ["uwsgi", \
+CMD ["uv", "run", "uwsgi", \
      "--plugins-dir", "/usr/lib/uwsgi", \
      "--plugin", "python3", \
      "--socket", "0.0.0.0:8000", \

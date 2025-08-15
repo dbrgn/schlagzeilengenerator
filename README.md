@@ -13,18 +13,17 @@ to `application/json`.
 
 ## Setup (Local)
 
-Prerequisites: Python 3, Pip
+Prerequisites: Python 3, [uv](https://docs.astral.sh/uv/)
 
 1. Clone repository
 
-2. If desired, create and activate a virtualenv:
+2. Enter app directory
 
-    virtualenv -p /usr/bin/python3 VIRTUAL
-    source VIRTUAL/bin/activate
+    cd app/
 
-3. Install requirements:
+3. Install dependencies (automatically creates and manages virtual environment):
 
-    pip install -r app/requirements.txt
+    uv sync
 
 4. Export some environment variables:
 
@@ -32,7 +31,7 @@ Prerequisites: Python 3, Pip
 
 5. Run development server:
 
-    DEBUG=true python app/app.py
+    uv run python app.py
 
 ## Setup (Docker)
 

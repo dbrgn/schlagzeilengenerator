@@ -1,0 +1,40 @@
+[project]
+name = "schlagzeilengenerator"
+version = "1.0.0"
+description = "A small web application to generate tabloid press headlines"
+readme = "README.md"
+license = "BSD-3-Clause"
+authors = [
+    { name = "Danilo Bargen", email = "mail@dbrgn.ch" },
+    { name = "Simon Aebersold" },
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Framework :: Flask",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+]
+requires-python = ">=3.8"
+dependencies = ["Flask~=2.1"]
+
+[project.urls]
+Homepage = "https://schlagzeilengenerator.ch"
+Repository = "https://github.com/dbrgn/schlagzeilengenerator"
+Issues = "https://github.com/dbrgn/schlagzeilengenerator/issues"
+
+[project.optional-dependencies]
+dev = ["black"]
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
