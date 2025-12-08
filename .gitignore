@@ -1,3 +1,10 @@
 *.pyc
 localconf.py
 *.swp
+app/venv/
+
+# Devcontainer
+.devcontainer/.onCreateCommandMarker
+.devcontainer/.postCreateCommandMarker
+.devcontainer/.postStartCommandMarker
+.devcontainer/.updateContentCommandMarker

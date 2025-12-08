@@ -1,0 +1,76 @@
+{
+  "name": "Schlagzeilengenerator Devcontainer",
+
+  // Build Dockerfile
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  // Configure container runtime options
+  "runArgs": [
+    // Resource limits for development
+    "--memory=6g",
+    "--cpus=4",
+    "--memory-swap=6g",
+    // Basic security: Limited capabilities
+    "--cap-drop=ALL",
+    "--cap-add=CHOWN",
+    "--cap-add=SETGID",
+    "--cap-add=SETUID"
+  ],
+
+  // Run as non-root user
+  "remoteUser": "dev",
+
+  // Automatically update container user UID/GID to match host user
+  "updateRemoteUserUID": true,
+
+  // Set working directory (devcontainer mounts workspace here)
+  "workspaceMount": "source=${localWorkspaceFolder},target=/code,type=bind,consistency=cached",
+  "workspaceFolder": "/code",
+
+  // Additional config for OpenCode
+  "initializeCommand": {
+    "create-opencode-config-dir": "mkdir -p ${HOME}/.config/opencode",
+    "create-opencode-auth-dir": "mkdir -p ${HOME}/.local/share/opencode && touch ${HOME}/.local/share/opencode/auth.json"
+  },
+  "mounts": [
+    // Config
+    "source=${localEnv:HOME}/.config/opencode,target=/home/dev/.config/opencode,type=bind,consistency=cached",
+    // Credentials
+    "source=${localEnv:HOME}/.local/share/opencode/auth.json,target=/home/dev/.local/share/opencode/auth.json,type=bind,consistency=cached"
+  ],
+
+  // Features to install
+  "features": {
+    "./features/opencode": {
+      "version": "latest",
+      "binaryType": "glibc"
+    }
+  },
+
+  // Forward ports:
+  // - 8000: Devserver
+  "forwardPorts": [8000],
+
+  // After first start
+  "postStartCommand": "cd /code/app && uv sync && . env/dev && uv run python app.py",
+
+  // VSCode customizations for dev container
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "[jsonc]": {
+          "editor.formatOnSave": false
+        }
+      },
+      "extensions": [
+        // Generic
+        "dnut.rewrap-revived",
+
+        // Python / Django
+        "ms-python.python"
+      ]
+    }
+  }
+}
