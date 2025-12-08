@@ -48,6 +48,10 @@ To see the logs:
 
     docker-compose logs
 
+## Setup (Devcontainer)
+
+This project includes a devcontainer that also contains OpenCode.
+
 ## License
 
 3-clause BSD, see `LICENSE` file for more information.
