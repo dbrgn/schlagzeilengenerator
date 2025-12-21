@@ -16,17 +16,11 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in {
         packages.default = pkgs.callPackage ./package.nix {};
-
-        # Alias for convenience
-        packages.schlagzeilengenerator = self.packages.${system}.default;
       }
     )
     // {
       # NixOS module (not system-specific)
       nixosModules.default = import ./module.nix;
-
-      # Alias for convenience
-      nixosModules.schlagzeilengenerator = self.nixosModules.default;
 
       # Overlay for adding the package to pkgs
       overlays.default = final: prev: {
