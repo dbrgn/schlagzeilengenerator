@@ -33,10 +33,15 @@
                 self.nixosModules.default
                 {
                   # Minimal config to evaluate the module
-                  services.schlagzeilengenerator.enable = true;
-
-                  # Apply overlay so pkgs.schlagzeilengenerator is available
-                  nixpkgs.overlays = [self.overlays.default];
+                  security.acme = {
+                    defaults.email = "example@example.com";
+                    acceptTerms = true;
+                  };
+                  services.schlagzeilengenerator = {
+                    enable = true;
+                    domain = "example.com";
+                    nginx.enable = true;
+                  };
 
                   # Required stub options for evaluation
                   nixpkgs.hostPlatform = system;
@@ -55,7 +60,11 @@
     )
     // {
       # NixOS module (not system-specific)
-      nixosModules.default = import ./module.nix;
+      # Includes the overlay so pkgs.schlagzeilengenerator is available
+      nixosModules.default = {
+        imports = [./module.nix];
+        nixpkgs.overlays = [self.overlays.default];
+      };
 
       # Overlay for adding the package to pkgs
       overlays.default = final: prev: {

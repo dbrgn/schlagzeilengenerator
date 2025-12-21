@@ -142,12 +142,12 @@ nix build
 
 ## Overlay
 
-The flake also provides an overlay for adding the package to your nixpkgs:
+The NixOS module automatically applies the overlay, so `pkgs.schlagzeilengenerator`
+is available when using the module. If you need the overlay separately (e.g., for
+use outside the module), you can apply it manually:
 
 ```nix
 nixpkgs.overlays = [ schlagzeilengenerator.overlays.default ];
-
-# Now you can use pkgs.schlagzeilengenerator anywhere
 ```
 
 ## Development
