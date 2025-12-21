@@ -28,18 +28,6 @@ in {
       description = "Host address for Gunicorn to bind to";
     };
 
-    user = lib.mkOption {
-      type = lib.types.str;
-      default = "schlagzeilen";
-      description = "User account under which the service runs";
-    };
-
-    group = lib.mkOption {
-      type = lib.types.str;
-      default = "schlagzeilen";
-      description = "Group under which the service runs";
-    };
-
     nginx = {
       enable = lib.mkOption {
         type = lib.types.bool;
@@ -94,18 +82,6 @@ in {
       }
     ];
 
-    users.users = lib.mkIf (cfg.user == "schlagzeilen") {
-      schlagzeilen = {
-        isSystemUser = true;
-        group = cfg.group;
-        description = "Schlagzeilengenerator service user";
-      };
-    };
-
-    users.groups = lib.mkIf (cfg.group == "schlagzeilen") {
-      schlagzeilen = {};
-    };
-
     systemd.services.schlagzeilengenerator = {
       description = "Schlagzeilengenerator tabloid headline generator";
       after = ["network.target"];
@@ -122,18 +98,14 @@ in {
 
       serviceConfig = {
         Type = "notify";
-        User = cfg.user;
-        Group = cfg.group;
+        DynamicUser = true;
         ExecStart = "${pkgs.schlagzeilengenerator}/bin/schlagzeilengenerator";
         Restart = "on-failure";
         RestartSec = "5s";
 
-        # Security hardening
-        NoNewPrivileges = true;
-        PrivateTmp = true;
+        # Security hardening. (Note: DynamicUser already implies PrivateTmp, RemoveIPC,
+        # ProtectSystem=strict, ProtectHome=read-only, NoNewPrivileges.)
         PrivateDevices = true;
-        ProtectSystem = "strict";
-        ProtectHome = true;
         ProtectKernelTunables = true;
         ProtectKernelModules = true;
         ProtectControlGroups = true;
@@ -146,7 +118,6 @@ in {
         LockPersonality = true;
         RestrictRealtime = true;
         RestrictSUIDSGID = true;
-        RemoveIPC = true;
         SystemCallFilter = ["@system-service" "~@privileged"];
         CapabilityBoundingSet = "";
         UMask = "0077";

@@ -54,8 +54,6 @@ Add to your `flake.nix`:
 - `services.schlagzeilengenerator.domain` - Domain name (required if nginx is enabled)
 - `services.schlagzeilengenerator.port` - Internal port for Gunicorn (default: `8000`)
 - `services.schlagzeilengenerator.host` - Bind address (default: `"127.0.0.1"`)
-- `services.schlagzeilengenerator.user` - Service user (default: `"schlagzeilen"`)
-- `services.schlagzeilengenerator.group` - Service group (default: `"schlagzeilen"`)
 
 #### Nginx Options
 
