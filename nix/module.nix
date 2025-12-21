@@ -137,6 +137,10 @@ in {
         ProtectKernelTunables = true;
         ProtectKernelModules = true;
         ProtectControlGroups = true;
+        ProtectClock = true;
+        ProtectHostname = true;
+        ProtectProc = "invisible";
+        ProcSubset = "pid";
         RestrictAddressFamilies = ["AF_UNIX" "AF_INET" "AF_INET6"];
         RestrictNamespaces = true;
         LockPersonality = true;
@@ -144,6 +148,8 @@ in {
         RestrictSUIDSGID = true;
         RemoveIPC = true;
         SystemCallFilter = ["@system-service" "~@privileged"];
+        CapabilityBoundingSet = "";
+        UMask = "0077";
       };
     };
 

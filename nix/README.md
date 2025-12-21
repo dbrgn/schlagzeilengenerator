@@ -161,17 +161,6 @@ To make changes to the Nix packaging:
 3. Build with `nix build`
 4. Test the NixOS module in a VM or container
 
-## Security
-
-The systemd service includes hardening options:
-
-- Runs as unprivileged user
-- Private /tmp
-- Restricted system calls
-- No new privileges
-- Protected kernel interfaces
-- Network-only access
-
 ## License
 
 Same as the main application (BSD-3-Clause).
