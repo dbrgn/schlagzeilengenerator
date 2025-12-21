@@ -34,3 +34,31 @@ jobs:
 
       - name: Check code formatting with black
         run: uv tool run black --check app/
+
+  nix-build:
+    name: Nix Build & Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Check flake and run all checks
+        run: nix flake check ./nix
+
+  nix-fmt:
+    name: Check Nix Formatting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Check Nix formatting with alejandra
+        run: cd nix && nix fmt . -- --check
