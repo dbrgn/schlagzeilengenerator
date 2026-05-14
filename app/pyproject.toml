@@ -29,7 +29,7 @@ Repository = "https://github.com/dbrgn/schlagzeilengenerator"
 Issues = "https://github.com/dbrgn/schlagzeilengenerator/issues"
 
 [project.optional-dependencies]
-dev = ["black"]
+dev = ["black~=26.3"]
 
 [tool.black]
 line-length = 88

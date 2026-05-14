@@ -8,7 +8,6 @@ from base64 import b64encode, b64decode
 from flask import Flask, request
 from flask import render_template, jsonify
 
-
 app = Flask(__name__)
 
 
